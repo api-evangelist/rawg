@@ -1,28 +1,53 @@
 aid: rawg
 name: RAWG
 description: >-
-  There are two types of companies: hoarders and givers. RAWG is the largest video
-  game database and game discovery service.
+  RAWG is the largest video game database and game discovery service, providing
+  access to more than 350,000 games across 50 platforms with rich metadata
+  including tags, genres, developers, publishers, creators, release dates, and
+  Metacritic ratings.
 type: Index
-position: Consumer
+position: Consuming
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags: []
-created: '2025-02-08'
-modified: '2025-02-08'
 url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/apis.yml
+tags:
+  - Video Games
+  - Games
+  - Game Discovery
+  - Entertainment
+  - Database
+created: '2025-02-08'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: rawg:rawg
-    name: RAWG
+    name: RAWG Video Games Database API
     description: >-
-      There are two types of companies: hoarders and givers. RAWG is the largest video
-      game database and game discovery service.
-    humanURL: ' https://rawg.io/apidocs'
-    tags: []
+      The RAWG Video Games Database API provides programmatic access to a
+      catalog of more than 350,000 games across 50+ platforms, including
+      developers, publishers, creators, genres, tags, stores, and platform
+      metadata. API key authentication is required for all requests.
+    humanURL: https://rawg.io/apidocs
+    baseURL: https://api.rawg.io/api
+    tags:
+      - Video Games
+      - Games
+      - Game Discovery
+      - Database
     properties:
       - type: Documentation
-        url: ' https://rawg.io/apidocs'
+        url: https://rawg.io/apidocs
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/openapi/rawg-openapi.json
+common:
+  - type: Website
+    url: https://rawg.io
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: SignUp
+    url: https://rawg.io/login?forward=developer
+  - type: TermsOfService
+    url: https://rawg.io/terms
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
