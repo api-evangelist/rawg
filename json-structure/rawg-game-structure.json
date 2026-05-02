@@ -1,0 +1,152 @@
+{
+  "title": "RAWG Game Structure",
+  "description": "Structural documentation for the RAWG Video Games Database API Game resource hierarchy.",
+  "version": "v1.0",
+  "baseUrl": "https://api.rawg.io/api",
+  "resources": {
+    "Game": {
+      "description": "Core game entity with metadata, ratings, and platform availability",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true, "description": "Unique identifier"},
+        "slug": {"type": "string", "readOnly": true, "description": "URL slug"},
+        "name": {"type": "string", "readOnly": true, "description": "Game title"},
+        "name_original": {"type": "string", "readOnly": true, "description": "Original language title"},
+        "description": {"type": "string", "readOnly": true, "description": "Full description"},
+        "released": {"type": "date", "readOnly": true, "description": "Release date"},
+        "tba": {"type": "boolean", "readOnly": true, "description": "To Be Announced flag"},
+        "updated": {"type": "date-time", "readOnly": true, "description": "Last updated timestamp"},
+        "background_image": {"type": "uri", "readOnly": true, "description": "Cover/background image URL"},
+        "website": {"type": "uri", "readOnly": true, "description": "Official website"},
+        "rating": {"type": "number", "description": "Community rating (0-5)"},
+        "rating_top": {"type": "integer", "readOnly": true, "description": "Maximum rating value"},
+        "ratings": {"type": "object", "readOnly": true, "description": "Rating distribution breakdown"},
+        "ratings_count": {"type": "integer", "readOnly": true, "description": "Total rating count"},
+        "metacritic": {"type": "integer", "readOnly": true, "description": "Metacritic score 0-100"},
+        "metacritic_url": {"type": "string", "readOnly": true, "description": "Metacritic page URL"},
+        "playtime": {"type": "integer", "readOnly": true, "description": "Avg playtime in hours"},
+        "added": {"type": "integer", "readOnly": true, "description": "Number of users who added this game"},
+        "added_by_status": {"type": "object", "readOnly": true, "description": "User collection status breakdown"},
+        "suggestions_count": {"type": "integer", "readOnly": true, "description": "Similar game suggestion count"},
+        "screenshots_count": {"type": "integer", "readOnly": true, "description": "Screenshot count"},
+        "movies_count": {"type": "integer", "readOnly": true, "description": "Trailer/video count"},
+        "creators_count": {"type": "integer", "readOnly": true, "description": "Credited creator count"},
+        "achievements_count": {"type": "integer", "readOnly": true, "description": "Achievement count"},
+        "parents_count": {"type": "integer", "readOnly": true, "description": "Parent game count (for DLCs)"},
+        "additions_count": {"type": "integer", "readOnly": true, "description": "DLC/addition count"},
+        "game_series_count": {"type": "integer", "readOnly": true, "description": "Series entry count"},
+        "alternative_names": {"type": "array<string>", "readOnly": true, "description": "Alternative/regional names"},
+        "reddit_url": {"type": "string", "readOnly": true, "description": "Subreddit URL"},
+        "reddit_name": {"type": "string", "readOnly": true, "description": "Subreddit name"},
+        "esrb_rating": {"type": "EsrbRating", "description": "ESRB content rating"},
+        "platforms": {"type": "array<GamePlatformEntry>", "description": "Available platforms"}
+      },
+      "relationships": {
+        "platforms": "Platform (many)",
+        "developers": "Developer (many)",
+        "publishers": "Publisher (many)",
+        "genres": "Genre (many)",
+        "tags": "Tag (many)",
+        "creators": "Person (many)",
+        "stores": "Store (many)",
+        "additions": "Game (many - DLCs)",
+        "game_series": "Game (many)",
+        "parent_games": "Game (many)"
+      }
+    },
+    "Platform": {
+      "description": "Gaming hardware or software platform",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "image": {"type": "uri", "readOnly": true, "nullable": true},
+        "year_start": {"type": "integer", "nullable": true},
+        "year_end": {"type": "integer", "nullable": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Developer": {
+      "description": "Game development studio or company",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Publisher": {
+      "description": "Game publishing company",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Genre": {
+      "description": "Video game genre category",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Tag": {
+      "description": "Descriptive tag applied to games",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "language": {"type": "string", "readOnly": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Store": {
+      "description": "Digital or physical game storefront",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "domain": {"type": "string", "nullable": true},
+        "slug": {"type": "string", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "description": {"type": "string"}
+      }
+    },
+    "Person": {
+      "description": "Individual game creator or development team member",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string"},
+        "slug": {"type": "string", "readOnly": true},
+        "image": {"type": "uri", "readOnly": true},
+        "image_background": {"type": "uri", "readOnly": true},
+        "games_count": {"type": "integer", "readOnly": true},
+        "description": {"type": "string"},
+        "reviews_count": {"type": "integer", "readOnly": true},
+        "rating": {"type": "string", "readOnly": true},
+        "rating_top": {"type": "integer", "readOnly": true},
+        "updated": {"type": "date-time", "readOnly": true}
+      }
+    },
+    "Position": {
+      "description": "Creator role or job position type",
+      "fields": {
+        "id": {"type": "integer", "readOnly": true},
+        "name": {"type": "string", "readOnly": true},
+        "slug": {"type": "string", "readOnly": true}
+      }
+    }
+  }
+}

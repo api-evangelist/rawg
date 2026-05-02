@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "rawg": "https://rawg.io/ontology/",
+    "id": "@id",
+    "slug": "rawg:slug",
+    "name": "name",
+    "description": "description",
+    "released": {
+      "@id": "datePublished",
+      "@type": "xsd:date"
+    },
+    "updated": {
+      "@id": "dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "website": {
+      "@id": "url",
+      "@type": "@id"
+    },
+    "background_image": {
+      "@id": "image",
+      "@type": "@id"
+    },
+    "rating": "aggregateRating",
+    "ratings_count": "ratingCount",
+    "metacritic": "rawg:metacriticScore",
+    "metacritic_url": {
+      "@id": "rawg:metacriticUrl",
+      "@type": "@id"
+    },
+    "playtime": "rawg:averagePlaytime",
+    "esrb_rating": "contentRating",
+    "platforms": {
+      "@id": "gamePlatform",
+      "@container": "@set"
+    },
+    "genres": {
+      "@id": "genre",
+      "@container": "@set"
+    },
+    "tags": {
+      "@id": "keywords",
+      "@container": "@set"
+    },
+    "developers": {
+      "@id": "creator",
+      "@container": "@set"
+    },
+    "publishers": {
+      "@id": "publisher",
+      "@container": "@set"
+    },
+    "alternative_names": "alternateName",
+    "screenshots_count": "rawg:screenshotsCount",
+    "movies_count": "rawg:trailersCount",
+    "achievements_count": "rawg:achievementsCount",
+    "additions_count": "rawg:additionsCount",
+    "game_series_count": "rawg:gameSeriesCount",
+    "reddit_url": {
+      "@id": "rawg:subredditUrl",
+      "@type": "@id"
+    },
+    "Game": "VideoGame",
+    "Platform": "GameServer",
+    "Developer": "Organization",
+    "Publisher": "Organization",
+    "Genre": "rawg:Genre",
+    "Tag": "rawg:Tag",
+    "Store": "rawg:Storefront",
+    "Person": "Person",
+    "Position": "JobTitle",
+    "EsrbRating": "rawg:EsrbRating",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "tba": "rawg:toBeAnnounced",
+    "games_count": "rawg:gamesCount",
+    "image_background": {
+      "@id": "rawg:backgroundImage",
+      "@type": "@id"
+    },
+    "year_start": "rawg:yearStart",
+    "year_end": "rawg:yearEnd",
+    "domain": "domainName",
+    "language": "inLanguage",
+    "reviews_count": "reviewCount",
+    "suggestions_count": "rawg:suggestionsCount",
+    "added": "rawg:addedToCollectionCount",
+    "added_by_status": "rawg:addedByStatus",
+    "reactions": "rawg:reactions",
+    "reddit_count": "rawg:redditPostCount",
+    "twitch_count": "rawg:twitchStreamCount",
+    "youtube_count": "rawg:youtubeVideoCount"
+  }
+}

@@ -1,0 +1,92 @@
+extends: spectral:oas
+rules:
+  rawg-operation-summary-title-case:
+    description: All operation summaries must use Title Case
+    message: "Summary '{{value}}' must be Title Case"
+    given: "$.paths[*][*].summary"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z][a-z0-9]*([ ][A-Z][a-z0-9]*)*|[A-Z]+)$"
+
+  rawg-operation-must-have-tags:
+    description: Every operation must have at least one tag
+    message: Operations must include at least one tag
+    given: "$.paths[*][*]"
+    severity: error
+    then:
+      field: tags
+      function: truthy
+
+  rawg-path-kebab-case:
+    description: Path segments should use kebab-case
+    message: "Path '{{path}}' should use kebab-case segments"
+    given: "$.paths[*]~"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\\/([a-z][a-z0-9-]*|\\{[a-zA-Z_]+\\}))+$"
+
+  rawg-apikey-required:
+    description: All operations must declare the key query parameter
+    message: Operations must include the API key query parameter
+    given: "$.paths[*][get].parameters[*]"
+    severity: warn
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          if:
+            properties:
+              name:
+                const: key
+          then:
+            properties:
+              in:
+                const: query
+
+  rawg-responses-200-required:
+    description: All GET operations must define a 200 response
+    message: GET operations must have a 200 response defined
+    given: "$.paths[*].get"
+    severity: error
+    then:
+      field: responses.200
+      function: truthy
+
+  rawg-pagination-parameters:
+    description: List operations should support page and page_size parameters
+    message: List operations should include pagination parameters
+    given: "$.paths[*].get"
+    severity: info
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          properties:
+            operationId:
+              pattern: "_list$"
+
+  rawg-no-trailing-slash:
+    description: Paths must not have trailing slashes
+    message: "Path '{{path}}' must not have a trailing slash"
+    given: "$.paths[*]~"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "\\/$"
+
+  rawg-operationid-consistent-naming:
+    description: OperationIds should follow provider pattern of resource_action
+    message: "OperationId '{{value}}' should follow the pattern resource_action"
+    given: "$.paths[*][*].operationId"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9-]*_[a-z][a-z0-9-]*"

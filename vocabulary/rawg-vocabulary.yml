@@ -1,0 +1,190 @@
+vocabulary:
+  name: RAWG Video Games Database Vocabulary
+  description: >-
+    Domain vocabulary for the RAWG Video Games Database API covering game
+    metadata, platforms, ratings, content classifications, and discovery
+    concepts used throughout the API.
+  version: v1.0
+  created: '2026-05-02'
+  modified: '2026-05-02'
+
+terms:
+  - term: Game
+    definition: >-
+      A video game entry in the RAWG database representing a distinct interactive
+      entertainment product across one or more platforms, including metadata such
+      as title, release date, ratings, genres, and publisher information.
+    synonyms:
+      - Video Game
+      - Title
+    relatedTerms:
+      - DLC
+      - Edition
+      - Game Series
+
+  - term: Slug
+    definition: >-
+      A URL-safe lowercase identifier derived from the resource name, using
+      hyphens instead of spaces (e.g., "grand-theft-auto-v"). Used as a
+      human-readable alternative to numeric IDs in API paths.
+    relatedTerms:
+      - ID
+      - Identifier
+
+  - term: Platform
+    definition: >-
+      A gaming hardware or software environment on which games can be played,
+      such as PC, PlayStation 4, Xbox One, Nintendo Switch, iOS, or Android.
+      Platforms are grouped under parent platforms (e.g., PlayStation 4 and
+      PS5 under the PlayStation parent platform).
+    relatedTerms:
+      - Parent Platform
+      - Console
+      - Operating System
+
+  - term: Genre
+    definition: >-
+      A category classifying games by gameplay mechanics, theme, or style.
+      Common genres include Action, Adventure, RPG, Strategy, Simulation,
+      Sports, Puzzle, Indie, and Shooter.
+    synonyms:
+      - Category
+      - Game Type
+
+  - term: Tag
+    definition: >-
+      A descriptive keyword applied to a game to improve searchability and
+      discovery. Tags are community-contributed and may describe gameplay
+      style (e.g., "singleplayer", "multiplayer"), features (e.g., "open-world"),
+      or technical attributes (e.g., "controller-support").
+    synonyms:
+      - Keyword
+      - Label
+
+  - term: Developer
+    definition: >-
+      A game development studio or company responsible for creating a video
+      game. May be the same as the publisher or a separate entity working
+      under a publishing agreement.
+    synonyms:
+      - Development Studio
+      - Game Studio
+
+  - term: Publisher
+    definition: >-
+      A company responsible for marketing, distributing, and financing the
+      release of a video game. Publishers may own or partner with developers.
+    synonyms:
+      - Game Publisher
+      - Distribution Company
+
+  - term: Creator
+    definition: >-
+      An individual person credited for their role in the development of a game,
+      such as a game designer, composer, writer, or artist. RAWG tracks
+      individual creators across games they have contributed to.
+    synonyms:
+      - Developer
+      - Contributor
+
+  - term: Creator Role
+    definition: >-
+      A job position or title describing the type of contribution an individual
+      creator made to a game (e.g., Director, Producer, Composer, Programmer,
+      Art Director).
+    synonyms:
+      - Position
+      - Job Title
+
+  - term: Store
+    definition: >-
+      A digital or physical retail storefront where a game can be purchased
+      or downloaded. Examples include Steam, Epic Games Store, PlayStation Store,
+      Xbox Game Pass, Nintendo eShop, and GOG.
+    synonyms:
+      - Storefront
+      - Retailer
+      - Distribution Platform
+
+  - term: Rating
+    definition: >-
+      A community-assigned quality score ranging from 0 to 5, reflecting player
+      sentiment for a game. RAWG aggregates ratings from its user community
+      across four sentiment tiers: exceptional (5), recommended (4), meh (3),
+      and skip (1).
+    relatedTerms:
+      - Metacritic Score
+      - Review
+
+  - term: Metacritic Score
+    definition: >-
+      A weighted average score from professional game critics as aggregated by
+      Metacritic, normalized to a 0-100 scale. Available for games that have
+      received significant critical coverage.
+    synonyms:
+      - Metascore
+
+  - term: ESRB Rating
+    definition: >-
+      A content rating assigned by the Entertainment Software Rating Board
+      (ESRB) indicating the age appropriateness of a game. Standard ratings
+      include Everyone, Everyone 10+, Teen, Mature, Adults Only, and
+      Rating Pending.
+    synonyms:
+      - Content Rating
+      - Age Rating
+
+  - term: DLC
+    definition: >-
+      Downloadable Content — additional game content (missions, characters,
+      maps, cosmetics) released after a game's initial launch, often as paid
+      add-ons or free updates. Tracked in RAWG as "additions" to the base game.
+    synonyms:
+      - Downloadable Content
+      - Expansion
+      - Add-on
+
+  - term: Game Series
+    definition: >-
+      A group of games that share a common universe, franchise, or narrative
+      thread (e.g., "Grand Theft Auto" series, "The Witcher" series). RAWG
+      links related games in a series for discovery.
+    synonyms:
+      - Franchise
+      - Series
+
+  - term: Playtime
+    definition: >-
+      The average number of hours a player spends completing a game, aggregated
+      from Steam activity data and RAWG community reporting. Measured in hours.
+    synonyms:
+      - Average Playtime
+      - Game Length
+
+  - term: TBA
+    definition: >-
+      To Be Announced — a flag indicating that a game's release date has not
+      yet been confirmed by the publisher or developer.
+    synonyms:
+      - Unannounced
+      - Release Date Pending
+
+  - term: Pagination
+    definition: >-
+      The mechanism used by the RAWG API to break large result sets into pages.
+      Controlled by the `page` and `page_size` query parameters. Responses
+      include `count` (total results), `next` (next page URL), and `previous`
+      (previous page URL).
+    relatedTerms:
+      - Page
+      - Page Size
+      - Cursor
+
+  - term: API Key
+    definition: >-
+      A unique authentication credential required with every RAWG API request,
+      passed as the `key` query parameter. Keys are obtained by registering
+      at rawg.io/apidocs. Requests without a valid key may be blocked.
+    synonyms:
+      - Access Key
+      - Authentication Token

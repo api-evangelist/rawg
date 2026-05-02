@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json",
+  "title": "RAWG Game",
+  "description": "A video game entry in the RAWG database with metadata including platforms, ratings, genres, and social data.",
+  "type": "object",
+  "required": ["rating"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique integer identifier for the game",
+      "readOnly": true
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-safe slug identifier for the game",
+      "pattern": "^[-a-zA-Z0-9_]+$",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "description": "Primary display name of the game",
+      "readOnly": true
+    },
+    "name_original": {
+      "type": "string",
+      "description": "Original name of the game (may differ from localized name)",
+      "readOnly": true
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the game",
+      "readOnly": true
+    },
+    "released": {
+      "type": "string",
+      "format": "date",
+      "description": "Official release date of the game",
+      "readOnly": true
+    },
+    "tba": {
+      "type": "boolean",
+      "description": "Whether the game is marked as To Be Announced",
+      "readOnly": true
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last updated timestamp for this game record",
+      "readOnly": true
+    },
+    "background_image": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the primary background image",
+      "readOnly": true
+    },
+    "background_image_additional": {
+      "type": "string",
+      "description": "URL to an additional background image",
+      "readOnly": true
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website URL for the game",
+      "readOnly": true
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average community rating (0-5 scale)",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "rating_top": {
+      "type": "integer",
+      "description": "Maximum possible rating",
+      "readOnly": true
+    },
+    "ratings": {
+      "type": "object",
+      "description": "Breakdown of rating distribution",
+      "readOnly": true
+    },
+    "ratings_count": {
+      "type": "integer",
+      "description": "Total number of ratings received",
+      "readOnly": true
+    },
+    "reviews_text_count": {
+      "type": "string",
+      "description": "Number of text reviews",
+      "readOnly": true
+    },
+    "added": {
+      "type": "integer",
+      "description": "Number of users who have added this game to their collection",
+      "readOnly": true
+    },
+    "added_by_status": {
+      "type": "object",
+      "description": "Breakdown of users by library status (owned, played, etc.)",
+      "readOnly": true
+    },
+    "metacritic": {
+      "type": "integer",
+      "description": "Metacritic score (0-100)",
+      "minimum": 0,
+      "maximum": 100,
+      "readOnly": true
+    },
+    "playtime": {
+      "type": "integer",
+      "description": "Average playtime in hours",
+      "readOnly": true
+    },
+    "screenshots_count": {
+      "type": "integer",
+      "description": "Number of screenshots available",
+      "readOnly": true
+    },
+    "movies_count": {
+      "type": "integer",
+      "description": "Number of trailers/movies available",
+      "readOnly": true
+    },
+    "creators_count": {
+      "type": "integer",
+      "description": "Number of credited creators",
+      "readOnly": true
+    },
+    "achievements_count": {
+      "type": "integer",
+      "description": "Number of achievements",
+      "readOnly": true
+    },
+    "suggestions_count": {
+      "type": "integer",
+      "description": "Number of similar game suggestions",
+      "readOnly": true
+    },
+    "reddit_url": {
+      "type": "string",
+      "description": "URL to the game's subreddit",
+      "readOnly": true
+    },
+    "reddit_name": {
+      "type": "string",
+      "description": "Name of the game's subreddit",
+      "readOnly": true
+    },
+    "parents_count": {
+      "type": "integer",
+      "description": "Number of parent games (for DLCs/editions)",
+      "readOnly": true
+    },
+    "additions_count": {
+      "type": "integer",
+      "description": "Number of DLCs and additions",
+      "readOnly": true
+    },
+    "game_series_count": {
+      "type": "integer",
+      "description": "Number of games in the same series",
+      "readOnly": true
+    },
+    "alternative_names": {
+      "type": "array",
+      "description": "List of alternative names or regional titles",
+      "items": {
+        "type": "string"
+      },
+      "readOnly": true
+    },
+    "metacritic_url": {
+      "type": "string",
+      "description": "URL to the game's Metacritic page",
+      "readOnly": true
+    },
+    "esrb_rating": {
+      "$ref": "#/definitions/EsrbRating"
+    },
+    "platforms": {
+      "type": "array",
+      "description": "List of platforms the game is available on",
+      "items": {
+        "$ref": "#/definitions/GamePlatformEntry"
+      }
+    }
+  },
+  "definitions": {
+    "EsrbRating": {
+      "type": "object",
+      "description": "ESRB content rating classification",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "slug": {
+          "type": "string",
+          "enum": ["everyone", "everyone-10-plus", "teen", "mature", "adults-only", "rating-pending"]
+        },
+        "name": {
+          "type": "string",
+          "enum": ["Everyone", "Everyone 10+", "Teen", "Mature", "Adults Only", "Rating Pending"]
+        }
+      }
+    },
+    "PlatformRef": {
+      "type": "object",
+      "description": "Reference to a gaming platform",
+      "properties": {
+        "id": {"type": "integer"},
+        "slug": {"type": "string"},
+        "name": {"type": "string"}
+      }
+    },
+    "PlatformRequirements": {
+      "type": "object",
+      "description": "System requirements for a platform",
+      "properties": {
+        "minimum": {"type": "string"},
+        "recommended": {"type": "string"}
+      }
+    },
+    "GamePlatformEntry": {
+      "type": "object",
+      "description": "A platform entry with release date and system requirements",
+      "properties": {
+        "platform": {"$ref": "#/definitions/PlatformRef"},
+        "released_at": {"type": "string", "nullable": true},
+        "requirements": {"$ref": "#/definitions/PlatformRequirements"}
+      }
+    }
+  }
+}
