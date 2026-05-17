@@ -61,7 +61,7 @@ apis:
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
       - type: JSONStructure
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
-      - type: JSONLd
+      - type: JSONLD
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
       - type: Vocabulary
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
