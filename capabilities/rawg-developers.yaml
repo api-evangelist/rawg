@@ -1,0 +1,114 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: RAWG Video Games Database API — developers
+  description: 'RAWG Video Games Database API — developers. 2 operations. Lead operation: Get a list of game developers..
+    Self-contained Naftiko capability covering one Rawg business surface.'
+  tags:
+  - Rawg
+  - developers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    RAWG_API_KEY: RAWG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rawg-developers
+    baseUri: https://api.rawg.io/api
+    description: RAWG Video Games Database API — developers business capability. Self-contained, no shared references.
+    resources:
+    - name: developers
+      path: /developers
+      operations:
+      - name: developerslist
+        method: GET
+        description: Get a list of game developers.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page
+          in: query
+          type: integer
+          description: A page number within the paginated result set.
+        - name: page_size
+          in: query
+          type: integer
+          description: Number of results to return per page.
+    - name: developers-id
+      path: /developers/{id}
+      operations:
+      - name: developersread
+        method: GET
+        description: Get details of the developer.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: rawg-developers-rest
+    port: 8080
+    description: REST adapter for RAWG Video Games Database API — developers. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/developers
+      name: developers
+      description: REST surface for developers.
+      operations:
+      - method: GET
+        name: developerslist
+        description: Get a list of game developers.
+        call: rawg-developers.developerslist
+        with:
+          page: rest.page
+          page_size: rest.page_size
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/developers/{id}
+      name: developers-id
+      description: REST surface for developers-id.
+      operations:
+      - method: GET
+        name: developersread
+        description: Get details of the developer.
+        call: rawg-developers.developersread
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rawg-developers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for RAWG Video Games Database API — developers. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-list-game-developers
+      description: Get a list of game developers.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rawg-developers.developerslist
+      with:
+        page: tools.page
+        page_size: tools.page_size
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-details-developer
+      description: Get details of the developer.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rawg-developers.developersread
+      outputParameters:
+      - type: object
+        mapping: $.
