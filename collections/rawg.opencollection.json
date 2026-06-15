@@ -1,0 +1,946 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RAWG Video Games Database API",
+    "version": "v1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "creator-roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of creator positions (jobs).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator-roles",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of creator positions (jobs)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "creators",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of game creators.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creators",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of game creators."
+        },
+        {
+          "info": {
+            "name": "Get details of the creator.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creators/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Person."
+              }
+            ]
+          },
+          "docs": "Get details of the creator."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "developers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of game developers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/developers",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of game developers."
+        },
+        {
+          "info": {
+            "name": "Get details of the developer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/developers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Developer."
+              }
+            ]
+          },
+          "docs": "Get details of the developer."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "games",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of games.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search query."
+              },
+              {
+                "name": "search_precise",
+                "value": "",
+                "type": "query",
+                "description": "Disable fuzziness for the search query."
+              },
+              {
+                "name": "search_exact",
+                "value": "",
+                "type": "query",
+                "description": "Mark the search query as exact."
+              },
+              {
+                "name": "parent_platforms",
+                "value": "",
+                "type": "query",
+                "description": "Filter by parent platforms, for example: `1,2,3`."
+              },
+              {
+                "name": "platforms",
+                "value": "",
+                "type": "query",
+                "description": "Filter by platforms, for example: `4,5`."
+              },
+              {
+                "name": "stores",
+                "value": "",
+                "type": "query",
+                "description": "Filter by stores, for example: `5,6`."
+              },
+              {
+                "name": "developers",
+                "value": "",
+                "type": "query",
+                "description": "Filter by developers, for example: `1612,18893` or `valve-software,feral-interactive`."
+              },
+              {
+                "name": "publishers",
+                "value": "",
+                "type": "query",
+                "description": "Filter by publishers, for example: `354,20987` or `electronic-arts,microsoft-studios`."
+              },
+              {
+                "name": "genres",
+                "value": "",
+                "type": "query",
+                "description": "Filter by genres, for example: `4,51` or `action,indie`."
+              },
+              {
+                "name": "tags",
+                "value": "",
+                "type": "query",
+                "description": "Filter by tags, for example: `31,7` or `singleplayer,multiplayer`."
+              },
+              {
+                "name": "creators",
+                "value": "",
+                "type": "query",
+                "description": "Filter by creators, for example: `78,28` or `cris-velasco,mike-morasky`."
+              },
+              {
+                "name": "dates",
+                "value": "",
+                "type": "query",
+                "description": "Filter by a release date, for example: `2010-01-01,2018-12-31.1960-01-01,1969-12-31`."
+              },
+              {
+                "name": "updated",
+                "value": "",
+                "type": "query",
+                "description": "Filter by an update date, for example: `2020-12-01,2020-12-31`."
+              },
+              {
+                "name": "platforms_count",
+                "value": "",
+                "type": "query",
+                "description": "Filter by platforms count, for example: `1`."
+              },
+              {
+                "name": "metacritic",
+                "value": "",
+                "type": "query",
+                "description": "Filter by a metacritic rating, for example: `80,100`."
+              },
+              {
+                "name": "exclude_collection",
+                "value": "",
+                "type": "query",
+                "description": "Exclude games from a particular collection, for example: `123`."
+              },
+              {
+                "name": "exclude_additions",
+                "value": "",
+                "type": "query",
+                "description": "Exclude additions."
+              },
+              {
+                "name": "exclude_parents",
+                "value": "",
+                "type": "query",
+                "description": "Exclude games which have additions."
+              },
+              {
+                "name": "exclude_game_series",
+                "value": "",
+                "type": "query",
+                "description": "Exclude games which included in a game series."
+              },
+              {
+                "name": "exclude_stores",
+                "value": "",
+                "type": "query",
+                "description": "Exclude stores, for example: `5,6`."
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Available fields: `name`, `released`, `added`, `created`, `updated`, `rating`, `metacritic`. You can reverse the sort order adding a hyphen, for example: `-released`."
+              }
+            ]
+          },
+          "docs": "Get a list of games."
+        },
+        {
+          "info": {
+            "name": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/additions",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc."
+        },
+        {
+          "info": {
+            "name": "Get a list of individual creators that were part of the development team.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/development-team",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of individual creators that were part of the development team."
+        },
+        {
+          "info": {
+            "name": "Get a list of games that are part of the same series.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/game-series",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of games that are part of the same series."
+        },
+        {
+          "info": {
+            "name": "Get a list of parent games for DLC's and editions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/parent-games",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of parent games for DLC's and editions."
+        },
+        {
+          "info": {
+            "name": "Get screenshots for the game.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/screenshots",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get screenshots for the game."
+        },
+        {
+          "info": {
+            "name": "Get links to the stores that sell the game.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:game_pk/stores",
+            "params": [
+              {
+                "name": "game_pk",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get links to the stores that sell the game."
+        },
+        {
+          "info": {
+            "name": "Get details of the game.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get details of the game."
+        },
+        {
+          "info": {
+            "name": "Get a list of game achievements.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/achievements",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get a list of game achievements."
+        },
+        {
+          "info": {
+            "name": "Get a list of game trailers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/movies",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get a list of game trailers."
+        },
+        {
+          "info": {
+            "name": "Get a list of most recent posts from the game's subreddit.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/reddit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get a list of most recent posts from the game's subreddit."
+        },
+        {
+          "info": {
+            "name": "Get a list of visually similar games, available only for business and enterprise API users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/suggested",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get a list of visually similar games, available only for business and enterprise API users."
+        },
+        {
+          "info": {
+            "name": "Get streams on Twitch associated with the game, available only for business and enterprise API users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/twitch",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get streams on Twitch associated with the game, available only for business and enterprise API users."
+        },
+        {
+          "info": {
+            "name": "Get videos from YouTube associated with the game, available only for business and enterprise API users.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/games/:id/youtube",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Game."
+              }
+            ]
+          },
+          "docs": "Get videos from YouTube associated with the game, available only for business and enterprise API users."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "genres",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of video game genres.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genres",
+            "params": [
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of video game genres."
+        },
+        {
+          "info": {
+            "name": "Get details of the genre.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genres/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Genre."
+              }
+            ]
+          },
+          "docs": "Get details of the genre."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "platforms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of video game platforms.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/platforms",
+            "params": [
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of video game platforms."
+        },
+        {
+          "info": {
+            "name": "Get a list of parent platforms.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/platforms/lists/parents",
+            "params": [
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "For instance, for PS2 and PS4 the “parent platform” is PlayStation."
+        },
+        {
+          "info": {
+            "name": "Get details of the platform.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/platforms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Platform."
+              }
+            ]
+          },
+          "docs": "Get details of the platform."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "publishers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of video game publishers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/publishers",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of video game publishers."
+        },
+        {
+          "info": {
+            "name": "Get details of the publisher.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/publishers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Publisher."
+              }
+            ]
+          },
+          "docs": "Get details of the publisher."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "stores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of video game storefronts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/stores",
+            "params": [
+              {
+                "name": "ordering",
+                "value": "",
+                "type": "query",
+                "description": "Which field to use when ordering the results."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of video game storefronts."
+        },
+        {
+          "info": {
+            "name": "Get details of the store.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/stores/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Store."
+              }
+            ]
+          },
+          "docs": "Get details of the store."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of tags.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/tags",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of tags."
+        },
+        {
+          "info": {
+            "name": "Get details of the tag.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Tag."
+              }
+            ]
+          },
+          "docs": "Get details of the tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
