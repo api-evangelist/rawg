@@ -60,6 +60,10 @@ apis:
       - type: Vocabulary
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 common:
+  - type: DomainSecurity
+    url: security/rawg-domain-security.yml
+  - type: Authentication
+    url: authentication/rawg-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/rawg
   - type: Website
