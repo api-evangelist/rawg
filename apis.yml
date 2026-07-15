@@ -60,6 +60,8 @@ apis:
       - type: Vocabulary
         url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/rawg-agentic-access.yml
   - type: DomainSecurity
     url: security/rawg-domain-security.yml
   - type: Authentication
