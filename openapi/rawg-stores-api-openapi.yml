@@ -1,0 +1,205 @@
+swagger: '2.0'
+info:
+  title: RAWG Video Games Database creator-roles stores API
+  description: '
+
+    The largest open video games database.
+
+
+    ### Why build on RAWG
+
+    - More than 350,000 games for 50 platforms including mobiles.
+
+    - Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,
+
+    Metacritic ratings.
+
+    - Where to buy: links to digital distribution services
+
+    - Similar games based on visual similarity.
+
+    - Player activity data: Steam average playtime and RAWG player counts and ratings.
+
+    - Actively developing and constantly getting better by user contribution and our algorithms.
+
+
+    ### Terms of Use
+
+    - Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active
+
+    hyperlink from every page where the data of RAWG is used.
+
+    - Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000
+
+    page views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for
+
+    commercial terms.
+
+    - No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy
+
+    to say what is a duplicate and what isn''t. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,
+
+    and we will talk it through.
+
+    - You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.
+
+    If you don’t provide it, we may ban your requests.
+
+
+    __[Read more](https://rawg.io/apidocs)__.
+
+    '
+  version: v1.0
+host: api.rawg.io
+basePath: /api
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: stores
+paths:
+  /stores:
+    parameters: []
+    get:
+      operationId: stores_list
+      summary: Get a list of video game storefronts.
+      description: ''
+      parameters:
+      - name: ordering
+        in: query
+        description: Which field to use when ordering the results.
+        required: false
+        type: string
+      - name: page
+        in: query
+        description: A page number within the paginated result set.
+        required: false
+        type: integer
+      - name: page_size
+        in: query
+        description: Number of results to return per page.
+        required: false
+        type: integer
+      responses:
+        '200':
+          description: ''
+          schema:
+            required:
+            - count
+            - results
+            type: object
+            properties:
+              count:
+                type: integer
+              next:
+                type: string
+                format: uri
+                x-nullable: true
+              previous:
+                type: string
+                format: uri
+                x-nullable: true
+              results:
+                type: array
+                items:
+                  $ref: '#/definitions/Store'
+      tags:
+      - stores
+  /stores/{id}:
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this Store.
+      required: true
+      type: integer
+    get:
+      operationId: stores_read
+      summary: Get details of the store.
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/StoreSingle'
+      tags:
+      - stores
+definitions:
+  StoreSingle:
+    required:
+    - name
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 100
+        minLength: 1
+      domain:
+        title: Domain
+        type: string
+        maxLength: 255
+        x-nullable: true
+      slug:
+        title: Slug
+        type: string
+        format: slug
+        pattern: ^[-a-zA-Z0-9_]+$
+        readOnly: true
+        minLength: 1
+      games_count:
+        title: Games count
+        type: integer
+        readOnly: true
+      image_background:
+        title: Image background
+        type: string
+        format: uri
+        readOnly: true
+        minLength: 1
+      description:
+        title: Description
+        type: string
+  Store:
+    required:
+    - name
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 100
+        minLength: 1
+      domain:
+        title: Domain
+        type: string
+        maxLength: 255
+        x-nullable: true
+      slug:
+        title: Slug
+        type: string
+        format: slug
+        pattern: ^[-a-zA-Z0-9_]+$
+        readOnly: true
+        minLength: 1
+      games_count:
+        title: Games count
+        type: integer
+        readOnly: true
+      image_background:
+        title: Image background
+        type: string
+        format: uri
+        readOnly: true
+        minLength: 1
