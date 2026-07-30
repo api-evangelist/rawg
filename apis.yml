@@ -10,9 +10,22 @@ description: >-
   RAWG is used by developers building game discovery apps, recommendation engines, gaming dashboards, and data
   warehouses.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rawg.png
 url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/apis.yml
 tags:
   - Database
@@ -26,39 +39,249 @@ created: '2025-02-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: rawg:rawg
-    name: RAWG Video Games Database API
-    description: >-
-      The RAWG Video Games Database API provides programmatic access to a catalog of more than 350,000 games across 50+
-      platforms, including creator roles, individual creators, game developers, game publishers, genres, tags,
-      storefronts, platforms, and detailed game metadata. The API supports pagination, search, and multi-dimensional
-      filtering across dates, platforms, genres, tags, Metacritic scores, and more. All requests require an API key
-      passed as a query parameter.
-    humanURL: https://rawg.io/apidocs
-    baseURL: https://api.rawg.io/api
-    tags:
-      - Database
-      - Entertainment
-      - Game Discovery
-      - Games
-      - Gaming
-      - Metadata
-      - Video Games
-    properties:
-      - type: Documentation
-        url: https://rawg.io/apidocs
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/openapi/rawg-openapi.yml
-      - type: Rules
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
-      - type: JSONSchema
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
-      - type: JSONStructure
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
-      - type: JSONLD
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
-      - type: Vocabulary
-        url: https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-creator-roles-api
+  name: RAWG creator-roles API
+  description: The creator-roles API from RAWG — 1 operation(s) for creator-roles.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - creator-roles
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-creator-roles-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-creators-api
+  name: RAWG creators API
+  description: The creators API from RAWG — 2 operation(s) for creators.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - creators
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-creators-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-developers-api
+  name: RAWG developers API
+  description: The developers API from RAWG — 2 operation(s) for developers.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - developers
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-developers-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-games-api
+  name: RAWG games API
+  description: The games API from RAWG — 14 operation(s) for games.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - games
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-games-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-genres-api
+  name: RAWG genres API
+  description: The genres API from RAWG — 2 operation(s) for genres.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - genres
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-genres-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-platforms-api
+  name: RAWG platforms API
+  description: The platforms API from RAWG — 3 operation(s) for platforms.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - platforms
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-platforms-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-publishers-api
+  name: RAWG publishers API
+  description: The publishers API from RAWG — 2 operation(s) for publishers.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - publishers
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-publishers-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-stores-api
+  name: RAWG stores API
+  description: The stores API from RAWG — 2 operation(s) for stores.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - stores
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-stores-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
+- aid: rawg:rawg-tags-api
+  name: RAWG tags API
+  description: The tags API from RAWG — 2 operation(s) for tags.
+  humanURL: https://rawg.io/apidocs
+  baseURL: https://api.rawg.io/api
+  tags:
+  - tags
+  properties:
+  - type: OpenAPI
+    url: openapi/rawg-tags-api-openapi.yml
+  - type: Documentation
+    url: https://rawg.io/apidocs
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/rules/rawg-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-schema/rawg-game-schema.json
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-structure/rawg-game-structure.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/json-ld/rawg-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 common:
   - type: AgenticAccess
     url: agentic-access/rawg-agentic-access.yml
