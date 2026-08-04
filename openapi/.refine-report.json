@@ -1,0 +1,30 @@
+{
+  "provider": "rawg",
+  "sources": [
+    "rawg-creator-roles-api-openapi.yml",
+    "rawg-creators-api-openapi.yml",
+    "rawg-developers-api-openapi.yml",
+    "rawg-games-api-openapi.yml",
+    "rawg-genres-api-openapi.yml",
+    "rawg-platforms-api-openapi.yml",
+    "rawg-publishers-api-openapi.yml",
+    "rawg-stores-api-openapi.yml",
+    "rawg-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "rawg-creator-roles-api-openapi.yml",
+    "rawg-creators-api-openapi.yml",
+    "rawg-developers-api-openapi.yml",
+    "rawg-games-api-openapi.yml",
+    "rawg-genres-api-openapi.yml",
+    "rawg-platforms-api-openapi.yml",
+    "rawg-publishers-api-openapi.yml",
+    "rawg-stores-api-openapi.yml",
+    "rawg-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

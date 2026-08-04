@@ -1,0 +1,2094 @@
+openapi: 3.0.3
+info:
+  title: RAWG Video Games Database API
+  description: >-
+    The largest open video games database. More than 350,000 games for 50
+    platforms including mobiles. Rich metadata: tags, genres, developers,
+    publishers, individual creators, official websites, release dates,
+    Metacritic ratings, store links, ESRB ratings, playtime, achievements,
+    screenshots, and social data. API key authentication is required for all
+    requests.
+  version: v1.0
+  termsOfService: https://rawg.io/terms
+  contact:
+    email: api@rawg.io
+servers:
+  - url: https://api.rawg.io/api
+    description: RAWG Production API
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Creator Roles
+    description: Game creator position/role types
+  - name: Creators
+    description: Individual game creators and development team members
+  - name: Developers
+    description: Game development studios and companies
+  - name: Games
+    description: Video games catalog with metadata, filtering, and related resources
+  - name: Genres
+    description: Video game genre categories
+  - name: Platforms
+    description: Gaming hardware and software platforms
+  - name: Publishers
+    description: Game publishing companies
+  - name: Stores
+    description: Digital and physical game storefronts
+  - name: Tags
+    description: Game tags and descriptive labels
+paths:
+  /creator-roles:
+    get:
+      operationId: creator-roles_list
+      summary: List Creator Roles
+      description: Get a list of creator positions (jobs).
+      tags:
+        - Creator Roles
+      parameters:
+        - name: page
+          in: query
+          description: A page number within the paginated result set.
+          required: false
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Number of results to return per page.
+          required: false
+          schema:
+            type: integer
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of creator roles
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPositionList'
+  /creators:
+    get:
+      operationId: creators_list
+      summary: List Creators
+      description: Get a list of game creators.
+      tags:
+        - Creators
+      parameters:
+        - name: page
+          in: query
+          description: A page number within the paginated result set.
+          required: false
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Number of results to return per page.
+          required: false
+          schema:
+            type: integer
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of creators
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPersonList'
+  /creators/{id}:
+    get:
+      operationId: creators_read
+      summary: Get Creator Details
+      description: Get details of the creator.
+      tags:
+        - Creators
+      parameters:
+        - name: id
+          in: path
+          description: A unique integer value identifying this Person.
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Creator details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonSingle'
+  /developers:
+    get:
+      operationId: developers_list
+      summary: List Developers
+      description: Get a list of game developers.
+      tags:
+        - Developers
+      parameters:
+        - name: page
+          in: query
+          description: A page number within the paginated result set.
+          required: false
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Number of results to return per page.
+          required: false
+          schema:
+            type: integer
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of developers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDeveloperList'
+  /developers/{id}:
+    get:
+      operationId: developers_read
+      summary: Get Developer Details
+      description: Get details of the developer.
+      tags:
+        - Developers
+      parameters:
+        - name: id
+          in: path
+          description: A unique integer value identifying this Developer.
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Developer details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeveloperSingle'
+  /games:
+    get:
+      operationId: games_list
+      summary: List Games
+      description: Get a list of games with rich filtering options.
+      tags:
+        - Games
+      parameters:
+        - name: page
+          in: query
+          description: A page number within the paginated result set.
+          required: false
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          description: Number of results to return per page.
+          required: false
+          schema:
+            type: integer
+        - name: search
+          in: query
+          description: Search query.
+          schema:
+            type: string
+        - name: search_precise
+          in: query
+          description: Disable fuzziness for the search query.
+          schema:
+            type: boolean
+        - name: search_exact
+          in: query
+          description: Mark the search query as exact.
+          schema:
+            type: boolean
+        - name: parent_platforms
+          in: query
+          description: 'Filter by parent platforms, for example: `1,2,3`.'
+          schema:
+            type: string
+        - name: platforms
+          in: query
+          description: 'Filter by platforms, for example: `4,5`.'
+          schema:
+            type: string
+        - name: stores
+          in: query
+          description: 'Filter by stores, for example: `5,6`.'
+          schema:
+            type: string
+        - name: developers
+          in: query
+          description: 'Filter by developers, for example: `1612,18893` or `valve-software,feral-interactive`.'
+          schema:
+            type: string
+        - name: publishers
+          in: query
+          description: 'Filter by publishers, for example: `354,20987` or `electronic-arts,microsoft-studios`.'
+          schema:
+            type: string
+        - name: genres
+          in: query
+          description: 'Filter by genres, for example: `4,51` or `action,indie`.'
+          schema:
+            type: string
+        - name: tags
+          in: query
+          description: 'Filter by tags, for example: `31,7` or `singleplayer,multiplayer`.'
+          schema:
+            type: string
+        - name: creators
+          in: query
+          description: 'Filter by creators, for example: `78,28` or `cris-velasco,mike-morasky`.'
+          schema:
+            type: string
+        - name: dates
+          in: query
+          description: 'Filter by a release date, for example: `2010-01-01,2018-12-31.1960-01-01,1969-12-31`.'
+          schema:
+            type: string
+        - name: updated
+          in: query
+          description: 'Filter by an update date, for example: `2020-12-01,2020-12-31`.'
+          schema:
+            type: string
+        - name: platforms_count
+          in: query
+          description: 'Filter by platforms count, for example: `1`.'
+          schema:
+            type: integer
+        - name: metacritic
+          in: query
+          description: 'Filter by a metacritic rating, for example: `80,100`.'
+          schema:
+            type: string
+        - name: exclude_collection
+          in: query
+          description: 'Exclude games from a particular collection, for example: `123`.'
+          schema:
+            type: integer
+        - name: exclude_additions
+          in: query
+          description: Exclude additions.
+          schema:
+            type: boolean
+        - name: exclude_parents
+          in: query
+          description: Exclude games which have additions.
+          schema:
+            type: boolean
+        - name: exclude_game_series
+          in: query
+          description: Exclude games which included in a game series.
+          schema:
+            type: boolean
+        - name: exclude_stores
+          in: query
+          description: 'Exclude stores, for example: `5,6`.'
+          schema:
+            type: string
+        - name: ordering
+          in: query
+          description: 'Available fields: `name`, `released`, `added`, `created`, `updated`, `rating`, `metacritic`. You can reverse the sort order adding a hyphen, for example: `-released`.'
+          schema:
+            type: string
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of games
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGameList'
+  /games/{id}:
+    get:
+      operationId: games_read
+      summary: Get Game Details
+      description: Get details of the game.
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          description: An ID or a slug identifying this Game.
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          description: API key for authentication.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Game details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameSingle'
+  /games/{game_pk}/additions:
+    get:
+      operationId: games_additions_list
+      summary: List Game Additions
+      description: "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc."
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of game additions/DLCs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGameList'
+  /games/{game_pk}/development-team:
+    get:
+      operationId: games_development-team_list
+      summary: List Game Development Team
+      description: Get a list of individual creators that were part of the development team.
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of development team members
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGamePersonList'
+  /games/{game_pk}/game-series:
+    get:
+      operationId: games_game-series_list
+      summary: List Game Series
+      description: Get a list of games that are part of the same series.
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of games in the same series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGameList'
+  /games/{game_pk}/parent-games:
+    get:
+      operationId: games_parent-games_list
+      summary: List Game Parent Games
+      description: "Get a list of parent games for DLC's and editions."
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of parent games
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGameList'
+  /games/{game_pk}/screenshots:
+    get:
+      operationId: games_screenshots_list
+      summary: List Game Screenshots
+      description: Get screenshots for the game.
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of screenshots
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedScreenShotList'
+  /games/{game_pk}/stores:
+    get:
+      operationId: games_stores_list
+      summary: List Game Store Links
+      description: Get links to the stores that sell the game.
+      tags:
+        - Games
+      parameters:
+        - name: game_pk
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of store links
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGameStoreFullList'
+  /games/{id}/achievements:
+    get:
+      operationId: games_achievements_read
+      summary: List Game Achievements
+      description: Get a list of game achievements.
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Game achievements
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParentAchievement'
+  /games/{id}/movies:
+    get:
+      operationId: games_movies_read
+      summary: List Game Trailers
+      description: Get a list of game trailers.
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Game trailers/movies
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+  /games/{id}/reddit:
+    get:
+      operationId: games_reddit_read
+      summary: List Game Reddit Posts
+      description: "Get a list of most recent posts from the game's subreddit."
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Recent Reddit posts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reddit'
+  /games/{id}/suggested:
+    get:
+      operationId: games_suggested_read
+      summary: List Suggested Games
+      description: Get a list of visually similar games (enterprise tier).
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Visually similar game
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameSingle'
+  /games/{id}/twitch:
+    get:
+      operationId: games_twitch_read
+      summary: List Game Twitch Streams
+      description: Get streams on Twitch associated with the game (enterprise tier).
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Twitch streams
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Twitch'
+  /games/{id}/youtube:
+    get:
+      operationId: games_youtube_read
+      summary: List Game YouTube Videos
+      description: Get videos from YouTube associated with the game (enterprise tier).
+      tags:
+        - Games
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: YouTube videos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Youtube'
+  /genres:
+    get:
+      operationId: genres_list
+      summary: List Genres
+      description: Get a list of video game genres.
+      tags:
+        - Genres
+      parameters:
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of genres
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedGenreList'
+  /genres/{id}:
+    get:
+      operationId: genres_read
+      summary: Get Genre Details
+      description: Get details of the genre.
+      tags:
+        - Genres
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Genre details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenreSingle'
+  /platforms:
+    get:
+      operationId: platforms_list
+      summary: List Platforms
+      description: Get a list of video game platforms.
+      tags:
+        - Platforms
+      parameters:
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of platforms
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPlatformList'
+  /platforms/lists/parents:
+    get:
+      operationId: platforms_lists_parents_list
+      summary: List Parent Platforms
+      description: Get a list of parent platforms. For instance, for PS2 and PS4 the parent platform is PlayStation.
+      tags:
+        - Platforms
+      parameters:
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of parent platforms
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPlatformParentList'
+  /platforms/{id}:
+    get:
+      operationId: platforms_read
+      summary: Get Platform Details
+      description: Get details of the platform.
+      tags:
+        - Platforms
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Platform details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlatformSingle'
+  /publishers:
+    get:
+      operationId: publishers_list
+      summary: List Publishers
+      description: Get a list of video game publishers.
+      tags:
+        - Publishers
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of publishers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPublisherList'
+  /publishers/{id}:
+    get:
+      operationId: publishers_read
+      summary: Get Publisher Details
+      description: Get details of the publisher.
+      tags:
+        - Publishers
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Publisher details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublisherSingle'
+  /stores:
+    get:
+      operationId: stores_list
+      summary: List Stores
+      description: Get a list of video game storefronts.
+      tags:
+        - Stores
+      parameters:
+        - name: ordering
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of stores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedStoreList'
+  /stores/{id}:
+    get:
+      operationId: stores_read
+      summary: Get Store Details
+      description: Get details of the store.
+      tags:
+        - Stores
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Store details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoreSingle'
+  /tags:
+    get:
+      operationId: tags_list
+      summary: List Tags
+      description: Get a list of tags.
+      tags:
+        - Tags
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Paginated list of tags
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTagList'
+  /tags/{id}:
+    get:
+      operationId: tags_read
+      summary: Get Tag Details
+      description: Get details of the tag.
+      tags:
+        - Tags
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tag details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagSingle'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
+  schemas:
+    Position:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        slug:
+          type: string
+          readOnly: true
+    PaginatedPositionList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+    Person:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        slug:
+          type: string
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+    PersonSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        slug:
+          type: string
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+        games_count:
+          type: integer
+          readOnly: true
+        reviews_count:
+          type: integer
+          readOnly: true
+        rating:
+          type: string
+          readOnly: true
+        rating_top:
+          type: integer
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+    PaginatedPersonList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+    Developer:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+    DeveloperSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+    PaginatedDeveloperList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Developer'
+    EsrbRating:
+      type: object
+      properties:
+        id:
+          type: integer
+        slug:
+          type: string
+          enum:
+            - everyone
+            - everyone-10-plus
+            - teen
+            - mature
+            - adults-only
+            - rating-pending
+        name:
+          type: string
+          enum:
+            - Everyone
+            - Everyone 10+
+            - Teen
+            - Mature
+            - Adults Only
+            - Rating Pending
+    PlatformRequirements:
+      type: object
+      properties:
+        minimum:
+          type: string
+        recommended:
+          type: string
+    PlatformRef:
+      type: object
+      properties:
+        id:
+          type: integer
+        slug:
+          type: string
+        name:
+          type: string
+    GamePlatformEntry:
+      type: object
+      properties:
+        platform:
+          $ref: '#/components/schemas/PlatformRef'
+        released_at:
+          type: string
+          nullable: true
+        requirements:
+          $ref: '#/components/schemas/PlatformRequirements'
+    Game:
+      type: object
+      required:
+        - rating
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        slug:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        released:
+          type: string
+          format: date
+          readOnly: true
+        tba:
+          type: boolean
+          readOnly: true
+        background_image:
+          type: string
+          format: uri
+          readOnly: true
+        rating:
+          type: number
+        rating_top:
+          type: integer
+          readOnly: true
+        ratings:
+          type: object
+          readOnly: true
+        ratings_count:
+          type: integer
+          readOnly: true
+        reviews_text_count:
+          type: string
+          readOnly: true
+        added:
+          type: integer
+          readOnly: true
+        added_by_status:
+          type: object
+          readOnly: true
+        metacritic:
+          type: integer
+          readOnly: true
+        playtime:
+          type: integer
+          readOnly: true
+          description: In hours
+        suggestions_count:
+          type: integer
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        esrb_rating:
+          $ref: '#/components/schemas/EsrbRating'
+        platforms:
+          type: array
+          items:
+            $ref: '#/components/schemas/GamePlatformEntry'
+    GameSingle:
+      type: object
+      required:
+        - rating
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        slug:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        name_original:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        metacritic:
+          type: integer
+          readOnly: true
+        released:
+          type: string
+          format: date
+          readOnly: true
+        tba:
+          type: boolean
+          readOnly: true
+        updated:
+          type: string
+          format: date-time
+          readOnly: true
+        background_image:
+          type: string
+          format: uri
+          readOnly: true
+        background_image_additional:
+          type: string
+          readOnly: true
+        website:
+          type: string
+          format: uri
+          readOnly: true
+        rating:
+          type: number
+        rating_top:
+          type: integer
+          readOnly: true
+        ratings:
+          type: object
+          readOnly: true
+        playtime:
+          type: integer
+          readOnly: true
+          description: In hours
+        screenshots_count:
+          type: integer
+          readOnly: true
+        movies_count:
+          type: integer
+          readOnly: true
+        creators_count:
+          type: integer
+          readOnly: true
+        achievements_count:
+          type: integer
+          readOnly: true
+        reddit_url:
+          type: string
+          readOnly: true
+        reddit_name:
+          type: string
+          readOnly: true
+        suggestions_count:
+          type: integer
+          readOnly: true
+        alternative_names:
+          type: array
+          items:
+            type: string
+          readOnly: true
+        metacritic_url:
+          type: string
+          readOnly: true
+        parents_count:
+          type: integer
+          readOnly: true
+        additions_count:
+          type: integer
+          readOnly: true
+        game_series_count:
+          type: integer
+          readOnly: true
+        esrb_rating:
+          $ref: '#/components/schemas/EsrbRating'
+        platforms:
+          type: array
+          items:
+            $ref: '#/components/schemas/GamePlatformEntry'
+    PaginatedGameList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Game'
+    GamePersonList:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        slug:
+          type: string
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+    PaginatedGamePersonList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/GamePersonList'
+    ScreenShot:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        hidden:
+          type: boolean
+          default: false
+        width:
+          type: integer
+          readOnly: true
+        height:
+          type: integer
+          readOnly: true
+    PaginatedScreenShotList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScreenShot'
+    GameStoreFull:
+      type: object
+      required:
+        - url
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        game_id:
+          type: string
+          readOnly: true
+        store_id:
+          type: string
+          readOnly: true
+        url:
+          type: string
+          format: uri
+    PaginatedGameStoreFullList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/GameStoreFull'
+    ParentAchievement:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        percent:
+          type: string
+          readOnly: true
+    Movie:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        preview:
+          type: string
+          format: uri
+          readOnly: true
+        data:
+          type: object
+          readOnly: true
+    Reddit:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        text:
+          type: string
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        username:
+          type: string
+          readOnly: true
+        username_url:
+          type: string
+          format: uri
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+    Twitch:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        external_id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        published:
+          type: string
+          format: date-time
+          readOnly: true
+        thumbnail:
+          type: string
+          format: uri
+          readOnly: true
+        view_count:
+          type: integer
+          readOnly: true
+        language:
+          type: string
+          readOnly: true
+    Youtube:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        external_id:
+          type: string
+          readOnly: true
+        channel_id:
+          type: string
+          readOnly: true
+        channel_title:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        view_count:
+          type: integer
+          readOnly: true
+        comments_count:
+          type: integer
+          readOnly: true
+        like_count:
+          type: integer
+          readOnly: true
+        thumbnails:
+          type: object
+          readOnly: true
+    Genre:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+    GenreSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+    PaginatedGenreList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Genre'
+    Platform:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+          nullable: true
+        year_start:
+          type: integer
+          nullable: true
+        year_end:
+          type: integer
+          nullable: true
+    PlatformSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        image:
+          type: string
+          format: uri
+          readOnly: true
+          nullable: true
+        year_start:
+          type: integer
+          nullable: true
+        year_end:
+          type: integer
+          nullable: true
+        description:
+          type: string
+    PlatformParentSingle:
+      type: object
+      required:
+        - name
+        - platforms
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        platforms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Platform'
+    PaginatedPlatformList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Platform'
+    PaginatedPlatformParentList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlatformParentSingle'
+    Publisher:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+    PublisherSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+    PaginatedPublisherList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Publisher'
+    Store:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        domain:
+          type: string
+          maxLength: 255
+          nullable: true
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+    StoreSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        domain:
+          type: string
+          nullable: true
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+    PaginatedStoreList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Store'
+    Tag:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        language:
+          type: string
+          readOnly: true
+    TagSingle:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        slug:
+          type: string
+          readOnly: true
+        games_count:
+          type: integer
+          readOnly: true
+        image_background:
+          type: string
+          format: uri
+          readOnly: true
+        description:
+          type: string
+    PaginatedTagList:
+      type: object
+      required:
+        - count
+        - results
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
