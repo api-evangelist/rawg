@@ -1,0 +1,220 @@
+{
+  "item": [
+    {
+      "id": "b859930f-dd76-48a8-84e6-57c8870ffea5",
+      "name": "stores",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92cdcceb-41bc-4ad2-a388-5a18c0a0168b",
+          "name": "Get a list of video game storefronts.",
+          "request": {
+            "name": "Get a list of video game storefronts.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b06e81df-5a8b-4ec5-b202-b87f3eca3d4e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8337,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": 538,\n      \"domain\": \"string\",\n      \"slug\": \"PkPqrKSF0\",\n      \"games_count\": 2312,\n      \"image_background\": \"http://SCNqbRqkznWYcWHRataGVtYcws.visgL87LzRgH\"\n    },\n    {\n      \"name\": \"string\",\n      \"id\": 3434,\n      \"domain\": \"string\",\n      \"slug\": \"g0YDpyYZgT\",\n      \"games_count\": 8629,\n      \"image_background\": \"http://JLRsrYvKOhbkNzAPoHegjkExiSKibTBGk.nhxbCEJetNFwIVM2fflNhSnHrPauHSpy\"\n    }\n  ],\n  \"next\": \"https://DfPKBEkrsdeWvfMWUxTWYpxDkEiafnbT.tcV6lH2k0yJjFxppez+aMuPcnjljdX5KtLbSu\",\n  \"previous\": \"https://lHTGDzyhFSTfFPChrYnOMVGIpLzsBW.jusrlUIZ8pKmstffOqQjiy7pXPYtFQvss5L.xvTu0iVI6p2THPjjUlj1Sm7JR-0YK,N5ekyt\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84ec8177-9406-4334-9a94-e307ea628efb",
+          "name": "Get details of the store.",
+          "request": {
+            "name": "Get details of the store.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stores",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) A unique integer value identifying this Store."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c8faaf05-4bc3-4e9a-bdef-e0754ba48cd3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stores",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) A unique integer value identifying this Store."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": 152,\n  \"domain\": \"string\",\n  \"slug\": \"ak\",\n  \"games_count\": 6915,\n  \"image_background\": \"http://iluwwmchPdBAdhBcSOMBffYIH.eronkUiybnp.jIxlI0FDBS.Z5fwX\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rawg.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bd853a13-39c7-4c50-9198-c76f3a99e878",
+    "name": "RAWG Video Games Database creator-roles stores API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe largest open video games database.\n\n### Why build on RAWG\n- More than 350,000 games for 50 platforms including mobiles.\n- Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,\nMetacritic ratings.\n- Where to buy: links to digital distribution services\n- Similar games based on visual similarity.\n- Player activity data: Steam average playtime and RAWG player counts and ratings.\n- Actively developing and constantly getting better by user contribution and our algorithms.\n\n### Terms of Use\n- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active\nhyperlink from every page where the data of RAWG is used.\n- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000\npage views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for\ncommercial terms.\n- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy\nto say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,\nand we will talk it through.\n- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.\nIf you don’t provide it, we may ban your requests.\n\n__[Read more](https://rawg.io/apidocs)__.\n",
+      "type": "text/plain"
+    }
+  }
+}

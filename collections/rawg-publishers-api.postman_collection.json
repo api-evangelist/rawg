@@ -1,0 +1,210 @@
+{
+  "item": [
+    {
+      "id": "731d125a-b3a5-417f-af5a-4269f42f51b8",
+      "name": "publishers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5c345d8d-9c22-4478-b0d6-57952df681a7",
+          "name": "Get a list of video game publishers.",
+          "request": {
+            "name": "Get a list of video game publishers.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "publishers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be6ae091-e65c-4f9f-9ec2-89437bb47048",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publishers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6324,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": 4157,\n      \"slug\": \"GKFgU\",\n      \"games_count\": 3660,\n      \"image_background\": \"https://fRJewKWQzJdxUqtdgxzgrCONBvn.uzdDkK6TfCunUE27itIQrsFkuJ7cRce-bAGpkR\"\n    },\n    {\n      \"name\": \"string\",\n      \"id\": 4328,\n      \"slug\": \"Vf736PBeg\",\n      \"games_count\": 4930,\n      \"image_background\": \"http://vU.blyqoC+CJ3.3ayWO9dRVkvcYZntC,O0RN9s6NNe44mvPi4tfJPnK2M4kmv3uA\"\n    }\n  ],\n  \"next\": \"https://VCqmrsUCNAxrGdWvvBpz.qsPpV2QxQJ\",\n  \"previous\": \"http://LthcXstE.skRcGU0d8MQHINVJ2drqBp9bCmKhOJUQ35wMeDTxkpuYm6c0PoEDbVDf5YzCJmWh+72\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e14dcbbc-b023-4036-8a14-5e2dcccea606",
+          "name": "Get details of the publisher.",
+          "request": {
+            "name": "Get details of the publisher.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "publishers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) A unique integer value identifying this Publisher."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b834cbd-4480-4ad9-8235-34a24d8a1d41",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publishers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) A unique integer value identifying this Publisher."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": 8476,\n  \"slug\": \"pvduho\",\n  \"games_count\": 7850,\n  \"image_background\": \"https://lYljdurSkKjgJqtfiKe.onjvwIggz,KjG+2GF6qAbHUoTt3x,LqmXSx+hvybIHwg6\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rawg.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dfd09cd2-c49f-415e-8def-96ebd1e6d89a",
+    "name": "RAWG Video Games Database creator-roles publishers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe largest open video games database.\n\n### Why build on RAWG\n- More than 350,000 games for 50 platforms including mobiles.\n- Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,\nMetacritic ratings.\n- Where to buy: links to digital distribution services\n- Similar games based on visual similarity.\n- Player activity data: Steam average playtime and RAWG player counts and ratings.\n- Actively developing and constantly getting better by user contribution and our algorithms.\n\n### Terms of Use\n- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active\nhyperlink from every page where the data of RAWG is used.\n- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000\npage views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for\ncommercial terms.\n- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy\nto say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,\nand we will talk it through.\n- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.\nIf you don’t provide it, we may ban your requests.\n\n__[Read more](https://rawg.io/apidocs)__.\n",
+      "type": "text/plain"
+    }
+  }
+}

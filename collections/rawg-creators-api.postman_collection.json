@@ -1,0 +1,210 @@
+{
+  "item": [
+    {
+      "id": "0a269a56-d1b5-4084-be45-9e04c9388484",
+      "name": "creators",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c16ff2d8-89ac-42fb-9cf6-0cd0a83646b9",
+          "name": "Get a list of game creators.",
+          "request": {
+            "name": "Get a list of game creators.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "creators"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40799c77-83ed-41e2-8c12-18701f6e2b12",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "creators"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7989,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": 8804,\n      \"slug\": \"qc\",\n      \"image\": \"http://mZHpWcaDALTVWYXS.wgGFy3bsSX4dn22jS.yiqHINsvRJQeziZ2,p1AADfMm8G-TH\",\n      \"image_background\": \"http://bPuGY.csrZpd0LE-DUGqr4SYUlQBXb7UsMrN-dA4Ey4XKzgOSozxZjKm+\",\n      \"games_count\": 4267\n    },\n    {\n      \"name\": \"string\",\n      \"id\": 6332,\n      \"slug\": \"YGngmxDj8\",\n      \"image\": \"http://KctduofkYlmdaQDMZMBIcSYQA.ppuSMKF4SPZW2epYLzMvF+M2dNC7hQNjCWZMjpQOdt0pG9YIdlafsxAS+sJ4Mx\",\n      \"image_background\": \"http://OJPddNDbDSaBUivOIrOkXTINGcAwelEwS.irkv+Tchu+Q5mdtjl03Ez3nf2WqNAconRKq1KTxE7b6IJDEdlIuRpiCpggkYM75glQGVWBmoI20TuXAhC\",\n      \"games_count\": 2656\n    }\n  ],\n  \"next\": \"https://JUThenV.fez-TfyrSyG0jewnip7y,HdJDqy\",\n  \"previous\": \"https://yetCSMQG.vtsFR,R\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5eee34d-9627-46f9-9259-cacebac499dd",
+          "name": "Get details of the creator.",
+          "request": {
+            "name": "Get details of the creator.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "creators",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) A unique integer value identifying this Person."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2175bf6f-1708-418d-b453-5ca2fee9d885",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "creators",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) A unique integer value identifying this Person."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": 8745,\n  \"slug\": \"A\",\n  \"image\": \"https://XHZUelsycTgyKNawYtexsdzR.pfJRBR5,eHk0YR7oWIG.sCRE,x-JtrZIJyIk6,qeBpLbGao\",\n  \"image_background\": \"http://UuLHEyyAwRyiePOHGSWTzd.nss64d2EAUm3lmqTday.CZaOhsEEObTyCnR\",\n  \"description\": \"string\",\n  \"games_count\": 6555,\n  \"reviews_count\": 5291,\n  \"rating\": \"string\",\n  \"rating_top\": 8753,\n  \"updated\": \"1960-02-10T04:11:31.624Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rawg.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2d1c5f8f-acb2-4196-927d-1a61693201d1",
+    "name": "RAWG Video Games Database creator-roles creators API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe largest open video games database.\n\n### Why build on RAWG\n- More than 350,000 games for 50 platforms including mobiles.\n- Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,\nMetacritic ratings.\n- Where to buy: links to digital distribution services\n- Similar games based on visual similarity.\n- Player activity data: Steam average playtime and RAWG player counts and ratings.\n- Actively developing and constantly getting better by user contribution and our algorithms.\n\n### Terms of Use\n- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active\nhyperlink from every page where the data of RAWG is used.\n- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000\npage views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for\ncommercial terms.\n- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy\nto say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,\nand we will talk it through.\n- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.\nIf you don’t provide it, we may ban your requests.\n\n__[Read more](https://rawg.io/apidocs)__.\n",
+      "type": "text/plain"
+    }
+  }
+}

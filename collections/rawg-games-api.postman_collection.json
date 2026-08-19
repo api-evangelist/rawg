@@ -1,0 +1,1650 @@
+{
+  "item": [
+    {
+      "id": "78025da3-3f11-4120-aced-a29799f0a589",
+      "name": "games",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "964c2f1d-0ffc-4039-a592-352b9b109ede",
+          "name": "Get a list of games.",
+          "request": {
+            "name": "Get a list of games.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search query."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_precise",
+                  "value": "<boolean>",
+                  "description": "Disable fuzziness for the search query."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_exact",
+                  "value": "<boolean>",
+                  "description": "Mark the search query as exact."
+                },
+                {
+                  "disabled": false,
+                  "key": "parent_platforms",
+                  "value": "<string>",
+                  "description": "Filter by parent platforms, for example: `1,2,3`."
+                },
+                {
+                  "disabled": false,
+                  "key": "platforms",
+                  "value": "<string>",
+                  "description": "Filter by platforms, for example: `4,5`."
+                },
+                {
+                  "disabled": false,
+                  "key": "stores",
+                  "value": "<string>",
+                  "description": "Filter by stores, for example: `5,6`."
+                },
+                {
+                  "disabled": false,
+                  "key": "developers",
+                  "value": "<string>",
+                  "description": "Filter by developers, for example: `1612,18893` or `valve-software,feral-interactive`."
+                },
+                {
+                  "disabled": false,
+                  "key": "publishers",
+                  "value": "<string>",
+                  "description": "Filter by publishers, for example: `354,20987` or `electronic-arts,microsoft-studios`."
+                },
+                {
+                  "disabled": false,
+                  "key": "genres",
+                  "value": "<string>",
+                  "description": "Filter by genres, for example: `4,51` or `action,indie`."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Filter by tags, for example: `31,7` or `singleplayer,multiplayer`."
+                },
+                {
+                  "disabled": false,
+                  "key": "creators",
+                  "value": "<string>",
+                  "description": "Filter by creators, for example: `78,28` or `cris-velasco,mike-morasky`."
+                },
+                {
+                  "disabled": false,
+                  "key": "dates",
+                  "value": "<string>",
+                  "description": "Filter by a release date, for example: `2010-01-01,2018-12-31.1960-01-01,1969-12-31`."
+                },
+                {
+                  "disabled": false,
+                  "key": "updated",
+                  "value": "<string>",
+                  "description": "Filter by an update date, for example: `2020-12-01,2020-12-31`."
+                },
+                {
+                  "disabled": false,
+                  "key": "platforms_count",
+                  "value": "<integer>",
+                  "description": "Filter by platforms count, for example: `1`."
+                },
+                {
+                  "disabled": false,
+                  "key": "metacritic",
+                  "value": "<string>",
+                  "description": "Filter by a metacritic rating, for example: `80,100`."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_collection",
+                  "value": "<integer>",
+                  "description": "Exclude games from a particular collection, for example: `123`."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_additions",
+                  "value": "<boolean>",
+                  "description": "Exclude additions."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_parents",
+                  "value": "<boolean>",
+                  "description": "Exclude games which have additions."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_game_series",
+                  "value": "<boolean>",
+                  "description": "Exclude games which included in a game series."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_stores",
+                  "value": "<string>",
+                  "description": "Exclude stores, for example: `5,6`."
+                },
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Available fields: `name`, `released`, `added`, `created`, `updated`, `rating`, `metacritic`. You can reverse the sort order adding a hyphen, for example: `-released`."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cea10349-da65-413c-b92e-0ccf354d275f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_precise",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "search_exact",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "parent_platforms",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "platforms",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stores",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "developers",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "publishers",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "genres",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "creators",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dates",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "platforms_count",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "metacritic",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_collection",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "exclude_additions",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "exclude_parents",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "exclude_game_series",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "exclude_stores",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 468,\n  \"results\": [\n    {\n      \"rating\": 8840.851473282775,\n      \"id\": 4134,\n      \"slug\": \"3iZG1l5299N\",\n      \"name\": \"string\",\n      \"released\": \"2002-07-13\",\n      \"tba\": false,\n      \"background_image\": \"https://lmMPpUPSOxdbgwYQTBDxtiIi.naMDPy3o9olvE8T6RCVeJfWBNOwiUoEyAvy31k-AKDGtb5QLepN84IEU5jUcr06AY5BN1sErBp\",\n      \"rating_top\": 6584,\n      \"ratings\": {},\n      \"ratings_count\": 4196,\n      \"reviews_text_count\": \"string\",\n      \"added\": 3051,\n      \"added_by_status\": {},\n      \"metacritic\": 7323,\n      \"playtime\": 1745,\n      \"suggestions_count\": 1266,\n      \"updated\": \"1987-11-20T04:20:40.628Z\",\n      \"esrb_rating\": {\n        \"id\": 2400,\n        \"slug\": \"mature\",\n        \"name\": \"Mature\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 5875,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 5049,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"rating\": 1383.667348486516,\n      \"id\": 7662,\n      \"slug\": \"EGC\",\n      \"name\": \"string\",\n      \"released\": \"2014-03-28\",\n      \"tba\": false,\n      \"background_image\": \"http://ylTCYxtVNiDbHhIf.xsvcQfJJLzJQq4Xuc-TMvG83AuO13CwOxwr.uIHRhJ7wlS29RndD0Wx,9fqT,twBibq\",\n      \"rating_top\": 857,\n      \"ratings\": {},\n      \"ratings_count\": 5516,\n      \"reviews_text_count\": \"string\",\n      \"added\": 3212,\n      \"added_by_status\": {},\n      \"metacritic\": 7566,\n      \"playtime\": 5057,\n      \"suggestions_count\": 3135,\n      \"updated\": \"1977-02-18T23:21:42.865Z\",\n      \"esrb_rating\": {\n        \"id\": 2302,\n        \"slug\": \"everyone\",\n        \"name\": \"Everyone\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 2476,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 1892,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    }\n  ],\n  \"next\": \"https://cOcLiizbqgi.qwqlHMI4lxBYPlqI,iWDA5bGKC0,X,wrn+EHchHBGgCJP.hT-E\",\n  \"previous\": \"http://GWTQNOogYAyOdgwFHedIYgbmvaUuax.txd4vy-7MOpD.sx-E,hpGyyB+3UXfr0Nvqs5SyBa+BFAY3VMl3lqdYcrejQlZd3t+n.Qx\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53fc9761-55c5-4651-98ba-64ff716f68ee",
+          "name": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc.",
+          "request": {
+            "name": "Get a list of DLC's for the game, GOTY and other editions, companion apps, etc.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "additions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13288df1-0524-4810-b2f2-c64c7a21660b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "additions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9514,\n  \"results\": [\n    {\n      \"rating\": 5531.511155675224,\n      \"id\": 4301,\n      \"slug\": \"K\",\n      \"name\": \"string\",\n      \"released\": \"1999-02-17\",\n      \"tba\": false,\n      \"background_image\": \"http://NdUBsHGGMFlYk.gbWLffiBjPFg782HYw67IezW27LCcip8U+R55p\",\n      \"rating_top\": 4708,\n      \"ratings\": {},\n      \"ratings_count\": 2765,\n      \"reviews_text_count\": \"string\",\n      \"added\": 2450,\n      \"added_by_status\": {},\n      \"metacritic\": 7130,\n      \"playtime\": 6607,\n      \"suggestions_count\": 2806,\n      \"updated\": \"1953-03-16T21:33:38.361Z\",\n      \"esrb_rating\": {\n        \"id\": 8385,\n        \"slug\": \"teen\",\n        \"name\": \"Mature\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 8787,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 7822,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"rating\": 5596.310803748961,\n      \"id\": 8472,\n      \"slug\": \"0QVHW3RowYa\",\n      \"name\": \"string\",\n      \"released\": \"2010-09-15\",\n      \"tba\": true,\n      \"background_image\": \"https://coJvypnVJiLckLTGuDxQOtIXAgGgUXbP.eidkGr61BYClNJxB5j\",\n      \"rating_top\": 8896,\n      \"ratings\": {},\n      \"ratings_count\": 9487,\n      \"reviews_text_count\": \"string\",\n      \"added\": 7031,\n      \"added_by_status\": {},\n      \"metacritic\": 131,\n      \"playtime\": 7362,\n      \"suggestions_count\": 8422,\n      \"updated\": \"1993-08-01T17:59:43.230Z\",\n      \"esrb_rating\": {\n        \"id\": 8759,\n        \"slug\": \"adults-only\",\n        \"name\": \"Rating Pending\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 445,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 9402,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    }\n  ],\n  \"next\": \"http://AkTPACzF.qjknQLWSRnClsI6X0HUWuDGvb8m\",\n  \"previous\": \"https://GgQBIXfYfoqFZKEombfQ.yxdqvUrB7AD.I8Sq1puYduBG.h9E2xKtU7z5THpL2Kit\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80bbe2bc-7b15-4083-8e8b-85136a52b13e",
+          "name": "Get a list of individual creators that were part of the development team.",
+          "request": {
+            "name": "Get a list of individual creators that were part of the development team.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "development-team"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dff74e43-2645-4d85-8f30-1fe40f6ac662",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "development-team"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8214,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": 1818,\n      \"slug\": \"eves9Fz\",\n      \"image\": \"https://NbkVx.xkF,h-E6q4Ef8-3GRL+i\",\n      \"image_background\": \"http://gYAeAkENtKQkeHDbNpGcR.fsrD9FBAeRvUexbL3BPjOuphygSrRd-,W+A7ojfLkiLElmzcpNmT435toJmhvRM0rT,O\",\n      \"games_count\": 3673\n    },\n    {\n      \"name\": \"string\",\n      \"id\": 7031,\n      \"slug\": \"8Jzsgdn5no-\",\n      \"image\": \"http://yIUOCVKEqqtBjptU.pdLe2ivpnquV3JVSENjVuuy5jJvkOwmZUeHaUF+MGvm\",\n      \"image_background\": \"https://DwgqSzycw.jerqk,gAC.RFE4\",\n      \"games_count\": 199\n    }\n  ],\n  \"next\": \"http://JSWjMPOsWjnaYOmKbZvcn.ryN3VArFBviAX,AsCtk2r1,skG+5JjTZkWA9-T344jqHpq.F\",\n  \"previous\": \"http://NIamnokK.ppzheMBHulSZ,buHEJgjoToul,S\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cecb288-2ff0-4174-b482-cbab0de62d42",
+          "name": "Get a list of games that are part of the same series.",
+          "request": {
+            "name": "Get a list of games that are part of the same series.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "game-series"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "744d3af1-3262-4103-9396-7188cca80fcc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "game-series"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9514,\n  \"results\": [\n    {\n      \"rating\": 5531.511155675224,\n      \"id\": 4301,\n      \"slug\": \"K\",\n      \"name\": \"string\",\n      \"released\": \"1999-02-17\",\n      \"tba\": false,\n      \"background_image\": \"http://NdUBsHGGMFlYk.gbWLffiBjPFg782HYw67IezW27LCcip8U+R55p\",\n      \"rating_top\": 4708,\n      \"ratings\": {},\n      \"ratings_count\": 2765,\n      \"reviews_text_count\": \"string\",\n      \"added\": 2450,\n      \"added_by_status\": {},\n      \"metacritic\": 7130,\n      \"playtime\": 6607,\n      \"suggestions_count\": 2806,\n      \"updated\": \"1953-03-16T21:33:38.361Z\",\n      \"esrb_rating\": {\n        \"id\": 8385,\n        \"slug\": \"teen\",\n        \"name\": \"Mature\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 8787,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 7822,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"rating\": 5596.310803748961,\n      \"id\": 8472,\n      \"slug\": \"0QVHW3RowYa\",\n      \"name\": \"string\",\n      \"released\": \"2010-09-15\",\n      \"tba\": true,\n      \"background_image\": \"https://coJvypnVJiLckLTGuDxQOtIXAgGgUXbP.eidkGr61BYClNJxB5j\",\n      \"rating_top\": 8896,\n      \"ratings\": {},\n      \"ratings_count\": 9487,\n      \"reviews_text_count\": \"string\",\n      \"added\": 7031,\n      \"added_by_status\": {},\n      \"metacritic\": 131,\n      \"playtime\": 7362,\n      \"suggestions_count\": 8422,\n      \"updated\": \"1993-08-01T17:59:43.230Z\",\n      \"esrb_rating\": {\n        \"id\": 8759,\n        \"slug\": \"adults-only\",\n        \"name\": \"Rating Pending\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 445,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 9402,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    }\n  ],\n  \"next\": \"http://AkTPACzF.qjknQLWSRnClsI6X0HUWuDGvb8m\",\n  \"previous\": \"https://GgQBIXfYfoqFZKEombfQ.yxdqvUrB7AD.I8Sq1puYduBG.h9E2xKtU7z5THpL2Kit\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00331af9-950e-46c4-8d11-c7c73e9e0c8a",
+          "name": "Get a list of parent games for DLC's and editions.",
+          "request": {
+            "name": "Get a list of parent games for DLC's and editions.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "parent-games"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "234199d7-bba1-4433-9b21-f778de94f30a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "parent-games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9514,\n  \"results\": [\n    {\n      \"rating\": 5531.511155675224,\n      \"id\": 4301,\n      \"slug\": \"K\",\n      \"name\": \"string\",\n      \"released\": \"1999-02-17\",\n      \"tba\": false,\n      \"background_image\": \"http://NdUBsHGGMFlYk.gbWLffiBjPFg782HYw67IezW27LCcip8U+R55p\",\n      \"rating_top\": 4708,\n      \"ratings\": {},\n      \"ratings_count\": 2765,\n      \"reviews_text_count\": \"string\",\n      \"added\": 2450,\n      \"added_by_status\": {},\n      \"metacritic\": 7130,\n      \"playtime\": 6607,\n      \"suggestions_count\": 2806,\n      \"updated\": \"1953-03-16T21:33:38.361Z\",\n      \"esrb_rating\": {\n        \"id\": 8385,\n        \"slug\": \"teen\",\n        \"name\": \"Mature\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 8787,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 7822,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    },\n    {\n      \"rating\": 5596.310803748961,\n      \"id\": 8472,\n      \"slug\": \"0QVHW3RowYa\",\n      \"name\": \"string\",\n      \"released\": \"2010-09-15\",\n      \"tba\": true,\n      \"background_image\": \"https://coJvypnVJiLckLTGuDxQOtIXAgGgUXbP.eidkGr61BYClNJxB5j\",\n      \"rating_top\": 8896,\n      \"ratings\": {},\n      \"ratings_count\": 9487,\n      \"reviews_text_count\": \"string\",\n      \"added\": 7031,\n      \"added_by_status\": {},\n      \"metacritic\": 131,\n      \"playtime\": 7362,\n      \"suggestions_count\": 8422,\n      \"updated\": \"1993-08-01T17:59:43.230Z\",\n      \"esrb_rating\": {\n        \"id\": 8759,\n        \"slug\": \"adults-only\",\n        \"name\": \"Rating Pending\"\n      },\n      \"platforms\": [\n        {\n          \"platform\": {\n            \"id\": 445,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        },\n        {\n          \"platform\": {\n            \"id\": 9402,\n            \"slug\": \"string\",\n            \"name\": \"string\"\n          },\n          \"released_at\": \"string\",\n          \"requirements\": {\n            \"minimum\": \"string\",\n            \"recommended\": \"string\"\n          }\n        }\n      ]\n    }\n  ],\n  \"next\": \"http://AkTPACzF.qjknQLWSRnClsI6X0HUWuDGvb8m\",\n  \"previous\": \"https://GgQBIXfYfoqFZKEombfQ.yxdqvUrB7AD.I8Sq1puYduBG.h9E2xKtU7z5THpL2Kit\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb63a0a0-7f31-4fe3-a4db-e9d8a7a2538e",
+          "name": "Get screenshots for the game.",
+          "request": {
+            "name": "Get screenshots for the game.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "screenshots"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7aec677b-be4d-4cf9-955d-b6b159381a3f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "screenshots"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4706,\n  \"results\": [\n    {\n      \"id\": 3643,\n      \"image\": \"https://QRx.tumlUKa.TzX\",\n      \"hidden\": false,\n      \"width\": 1802,\n      \"height\": 7405\n    },\n    {\n      \"id\": 6770,\n      \"image\": \"http://WDOCqNwfsTNbpCJYqb.jvycq4i2hBmumOS3ao4WXIRl\",\n      \"hidden\": false,\n      \"width\": 1398,\n      \"height\": 5923\n    }\n  ],\n  \"next\": \"http://AmO.fdrHZGlZAyj1EaB\",\n  \"previous\": \"http://iSzpiMK.gprgyqAQEeMyY.zhRGs.s7b-qx8Svz-z88\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6406c19-f656-4c16-b664-1da89a0dd7cb",
+          "name": "Get links to the stores that sell the game.",
+          "request": {
+            "name": "Get links to the stores that sell the game.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":game_pk",
+                "stores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "game_pk",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "931b43dc-13aa-4697-9221-0fa0e32c256c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":game_pk",
+                    "stores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "game_pk",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 7001,\n  \"results\": [\n    {\n      \"url\": \"https://OHXPMcuChwdGnNOVtYvALlHqBS.egtQJ9x9X43GNWeldnSi\",\n      \"id\": 5586,\n      \"game_id\": \"string\",\n      \"store_id\": \"string\"\n    },\n    {\n      \"url\": \"https://DmNTRZWWVZm.rqhqM3.39G81zMPV2KXR.gkhowDertMdWALfQ9g6ui8mIgAeMNyDo.aAe3aFHLmK8H3.1hguc3w\",\n      \"id\": 6159,\n      \"game_id\": \"string\",\n      \"store_id\": \"string\"\n    }\n  ],\n  \"next\": \"http://gJaFlKsLwcMaQzDPMRoxHpiTcv.glno2IIT2xGwt4iHycJ-mE4Vw0cuUrZub6U5DdkeSDqyUfqn1lhvj,Emak4h9\",\n  \"previous\": \"https://CaLevV.kzqgIzFbJ8ZFTrUqsDgGa6\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "270505a9-692f-4529-8469-570948c551f6",
+          "name": "Get details of the game.",
+          "request": {
+            "name": "Get details of the game.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdc418a2-42c3-46ef-9a2d-f9326631e101",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rating\": 2949.84353758181,\n  \"id\": 5452,\n  \"slug\": \"z_ZzJ\",\n  \"name\": \"string\",\n  \"name_original\": \"string\",\n  \"description\": \"string\",\n  \"metacritic\": 7487,\n  \"metacritic_platforms\": [\n    {\n      \"metascore\": 8944,\n      \"url\": \"string\"\n    },\n    {\n      \"metascore\": 2877,\n      \"url\": \"string\"\n    }\n  ],\n  \"released\": \"1983-01-29\",\n  \"tba\": true,\n  \"updated\": \"1969-02-26T20:57:42.790Z\",\n  \"background_image\": \"http://vPkusJdeuCKIexXbreNgOyNagoZTOMTw.knKvISNqFmyleoeA5Hz9Uev5atQ4\",\n  \"background_image_additional\": \"string\",\n  \"website\": \"https://AFSdSLdVkyRvIIvAtTEJUqiRrUSHrA.hkzS29I-bfQNm.aAzzEMCEfyi3Fuq1pjWa0YkBo9ZnHTUYo4Ucw3pOc31r4aL\",\n  \"rating_top\": 6329,\n  \"ratings\": {},\n  \"reactions\": {},\n  \"added\": 2619,\n  \"added_by_status\": {},\n  \"playtime\": 1440,\n  \"screenshots_count\": 7282,\n  \"movies_count\": 4932,\n  \"creators_count\": 3166,\n  \"achievements_count\": 3105,\n  \"parent_achievements_count\": \"string\",\n  \"reddit_url\": \"string\",\n  \"reddit_name\": \"string\",\n  \"reddit_description\": \"string\",\n  \"reddit_logo\": \"https://PvZkNXOXxhnqCNjVpavwMZOqVZkBWY.huuYfI,o8vcFbzGsFh8umnYRdn4LJSiI8Uh0wr00QurQ98\",\n  \"reddit_count\": 9740,\n  \"twitch_count\": \"string\",\n  \"youtube_count\": \"string\",\n  \"reviews_text_count\": \"string\",\n  \"ratings_count\": 8975,\n  \"suggestions_count\": 2696,\n  \"alternative_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"metacritic_url\": \"string\",\n  \"parents_count\": 4455,\n  \"additions_count\": 1876,\n  \"game_series_count\": 1620,\n  \"esrb_rating\": {\n    \"id\": 7278,\n    \"slug\": \"rating-pending\",\n    \"name\": \"Everyone\"\n  },\n  \"platforms\": [\n    {\n      \"platform\": {\n        \"id\": 5021,\n        \"slug\": \"string\",\n        \"name\": \"string\"\n      },\n      \"released_at\": \"string\",\n      \"requirements\": {\n        \"minimum\": \"string\",\n        \"recommended\": \"string\"\n      }\n    },\n    {\n      \"platform\": {\n        \"id\": 9041,\n        \"slug\": \"string\",\n        \"name\": \"string\"\n      },\n      \"released_at\": \"string\",\n      \"requirements\": {\n        \"minimum\": \"string\",\n        \"recommended\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4645271a-f7e7-44bf-aa57-5037ec8ab3d6",
+          "name": "Get a list of game achievements.",
+          "request": {
+            "name": "Get a list of game achievements.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "achievements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbf7b5f9-ae88-41b8-a772-5a41c8ba4c80",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "achievements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9958,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"image\": \"https://fRIqFtEdgSm.dlCW-Kg5ykKb9c-HrnUuhZkRcIARqi1OG+tmrzWbxm1c-MljdKBF1MH,O6kHSfC\",\n  \"percent\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d83a3e92-7705-4a57-8b00-73914885abd1",
+          "name": "Get a list of game trailers.",
+          "request": {
+            "name": "Get a list of game trailers.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "movies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "933857d6-ba82-49cd-97e4-d42c1db3c8db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "movies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2672,\n  \"name\": \"string\",\n  \"preview\": \"http://GSzmrnqSAFoNpuALVJG.gobrepejQ3QLzSHiCdG44LcjEjNZNqO,BUlftBTdnFTo.qcFuSRORLBNrRJI\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74f242a5-ad25-4153-afc5-e75f19f31c26",
+          "name": "Get a list of most recent posts from the game's subreddit.",
+          "request": {
+            "name": "Get a list of most recent posts from the game's subreddit.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "reddit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27bcc7d6-d098-4145-b390-267d5a93178e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "reddit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9873,\n  \"name\": \"string\",\n  \"text\": \"string\",\n  \"image\": \"http://eIqIrXMiHcCjEEQQjEtLAeKHLH.ztuwB-z3ahkIb2a3--jses5p58j9Sbd5STj5\",\n  \"url\": \"http://glZbDZ.vbxbglcH33l5jDozZaR,xajFDCLa,k-IjixxGi-oagBO9o9\",\n  \"username\": \"string\",\n  \"username_url\": \"https://pEGWXeUSpvVVtgQWfZUGBBI.ydvddQBcmZtB8oyVsEHF1xldogG8OknRGfs7fin,DD0uLTBJ5YdewyA+Pehp\",\n  \"created\": \"2014-05-31T08:35:47.365Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0a521b4-f345-41ad-ae05-7a1ed13f4d5b",
+          "name": "Get a list of visually similar games, available only for business and enterprise API users.",
+          "request": {
+            "name": "Get a list of visually similar games, available only for business and enterprise API users.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "suggested"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29ad7248-b07c-4618-b4c5-de54c5a07ba0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "suggested"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rating\": 8800.515990715005,\n  \"id\": 3369,\n  \"slug\": \"UDx\",\n  \"name\": \"string\",\n  \"name_original\": \"string\",\n  \"description\": \"string\",\n  \"metacritic\": 8629,\n  \"metacritic_platforms\": [\n    {\n      \"metascore\": 5005,\n      \"url\": \"string\"\n    },\n    {\n      \"metascore\": 9237,\n      \"url\": \"string\"\n    }\n  ],\n  \"released\": \"1974-07-10\",\n  \"tba\": true,\n  \"updated\": \"2003-05-03T11:40:40.645Z\",\n  \"background_image\": \"https://xSAkGbDMXsG.vxjxHk2ri6P..rFoVGO+FkZx-.yWR94hC++fvGFJoO4k,f8FH4vD4n,+JvavaTtAY\",\n  \"background_image_additional\": \"string\",\n  \"website\": \"https://PWzjUYPKykBpcXglqgVRWezx.soqghm0u8uAgdW1fjcr2FIqefUB.mQHk,6fRrD\",\n  \"rating_top\": 7093,\n  \"ratings\": {},\n  \"reactions\": {},\n  \"added\": 5939,\n  \"added_by_status\": {},\n  \"playtime\": 5168,\n  \"screenshots_count\": 1292,\n  \"movies_count\": 3142,\n  \"creators_count\": 5907,\n  \"achievements_count\": 8086,\n  \"parent_achievements_count\": \"string\",\n  \"reddit_url\": \"string\",\n  \"reddit_name\": \"string\",\n  \"reddit_description\": \"string\",\n  \"reddit_logo\": \"http://gpE.mtkNIl24JuLpU-lfyz,pM8TecRDsvmoyxwoT3-6z,B3btQul1s+zFgAU\",\n  \"reddit_count\": 4805,\n  \"twitch_count\": \"string\",\n  \"youtube_count\": \"string\",\n  \"reviews_text_count\": \"string\",\n  \"ratings_count\": 8007,\n  \"suggestions_count\": 3570,\n  \"alternative_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"metacritic_url\": \"string\",\n  \"parents_count\": 8805,\n  \"additions_count\": 5177,\n  \"game_series_count\": 2513,\n  \"esrb_rating\": {\n    \"id\": 312,\n    \"slug\": \"adults-only\",\n    \"name\": \"Everyone 10+\"\n  },\n  \"platforms\": [\n    {\n      \"platform\": {\n        \"id\": 1160,\n        \"slug\": \"string\",\n        \"name\": \"string\"\n      },\n      \"released_at\": \"string\",\n      \"requirements\": {\n        \"minimum\": \"string\",\n        \"recommended\": \"string\"\n      }\n    },\n    {\n      \"platform\": {\n        \"id\": 3813,\n        \"slug\": \"string\",\n        \"name\": \"string\"\n      },\n      \"released_at\": \"string\",\n      \"requirements\": {\n        \"minimum\": \"string\",\n        \"recommended\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2807fd7e-0605-49b2-ac92-f1ba5310c714",
+          "name": "Get streams on Twitch associated with the game, available only for business and enterprise API users.",
+          "request": {
+            "name": "Get streams on Twitch associated with the game, available only for business and enterprise API users.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "twitch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ceb16fb-3b86-4b0e-8620-2f92302ac323",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "twitch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6380,\n  \"external_id\": 5985,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"created\": \"2016-06-25T18:19:12.217Z\",\n  \"published\": \"1987-05-26T09:31:24.287Z\",\n  \"thumbnail\": \"http://UBvjeiIDhxhkdhmwkEepqTKgUUl.rlxtOBGsGWbjLZ\",\n  \"view_count\": 2363,\n  \"language\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c420baa-fc03-49df-9e20-0ad027eb679e",
+          "name": "Get videos from YouTube associated with the game, available only for business and enterprise API users.",
+          "request": {
+            "name": "Get videos from YouTube associated with the game, available only for business and enterprise API users.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "games",
+                ":id",
+                "youtube"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) An ID or a slug identifying this Game."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "822cf013-7af9-4552-8aeb-afdada2a6495",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "games",
+                    ":id",
+                    "youtube"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) An ID or a slug identifying this Game."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1494,\n  \"external_id\": \"string\",\n  \"channel_id\": \"string\",\n  \"channel_title\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"created\": \"1958-09-11T20:37:30.851Z\",\n  \"view_count\": 9854,\n  \"comments_count\": 4281,\n  \"like_count\": 1742,\n  \"dislike_count\": 6448,\n  \"favorite_count\": 3603,\n  \"thumbnails\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rawg.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "298dfd81-f3fe-4189-9d75-fdab6d5f6cf9",
+    "name": "RAWG Video Database creator-roles games API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe largest open video games database.\n\n### Why build on RAWG\n- More than 350,000 games for 50 platforms including mobiles.\n- Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,\nMetacritic ratings.\n- Where to buy: links to digital distribution services\n- Similar games based on visual similarity.\n- Player activity data: Steam average playtime and RAWG player counts and ratings.\n- Actively developing and constantly getting better by user contribution and our algorithms.\n\n### Terms of Use\n- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active\nhyperlink from every page where the data of RAWG is used.\n- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000\npage views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for\ncommercial terms.\n- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy\nto say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,\nand we will talk it through.\n- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.\nIf you don’t provide it, we may ban your requests.\n\n__[Read more](https://rawg.io/apidocs)__.\n",
+      "type": "text/plain"
+    }
+  }
+}

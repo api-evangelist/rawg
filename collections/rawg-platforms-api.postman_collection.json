@@ -1,0 +1,325 @@
+{
+  "item": [
+    {
+      "id": "656c99e0-7341-422a-bcbe-3022027a9711",
+      "name": "platforms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9aa840b0-670f-4aa5-906c-45c5dc1743cd",
+          "name": "Get a list of video game platforms.",
+          "request": {
+            "name": "Get a list of video game platforms.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "platforms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9280b139-4545-42b6-9174-4ef3d8bac09e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "platforms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5584,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"id\": 6025,\n      \"slug\": \"m\",\n      \"games_count\": 3320,\n      \"image_background\": \"http://GJCsfMjJAsPAiilVVSIFzuGrScbeNao.wcvDf7tEEggNcPB2e+X3jQQDW-NOFWcUFCuw6LsCmQGy2dWKfA,\",\n      \"image\": \"http://hFFHATtjUeDwX.bhaOp.D++qbJOq\",\n      \"year_start\": 9887,\n      \"year_end\": 3103\n    },\n    {\n      \"name\": \"string\",\n      \"id\": 5320,\n      \"slug\": \"YY5javdpeqy\",\n      \"games_count\": 5331,\n      \"image_background\": \"https://djpqZQOyRusJrCbXyyefAyV.ypfE,M0j2mltJaNtoLEo62NS2cj\",\n      \"image\": \"http://DZLKKJNkOlHQktnzvd.zqhwDQ4xULi1Fu2qVp-EA0rT.dOrK.JOemgFSyh\",\n      \"year_start\": 12535,\n      \"year_end\": 12077\n    }\n  ],\n  \"next\": \"https://nxfHSQDZAVDlPOHdteSnpEgRShero.ifhvX4.vMJQoLopTTsj\",\n  \"previous\": \"https://zxZqLtGjbqbAnhCx.cldxZnQb3PnQ5im-FCrTlQIAUtgWagZ6pVDFIiFgSGnIZHvdhq,\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "932744aa-698d-4632-9273-2fd8407a6140",
+          "name": "Get a list of parent platforms.",
+          "request": {
+            "name": "Get a list of parent platforms.",
+            "description": {
+              "content": "For instance, for PS2 and PS4 the “parent platform” is PlayStation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "platforms",
+                "lists",
+                "parents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ordering",
+                  "value": "<string>",
+                  "description": "Which field to use when ordering the results."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "A page number within the paginated result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Number of results to return per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f72647d-7693-4400-9356-e08762d590f7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "platforms",
+                    "lists",
+                    "parents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6013,\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"platforms\": [\n        {\n          \"name\": \"string\",\n          \"id\": 7852,\n          \"slug\": \"EO8Gj1i\",\n          \"games_count\": 6257,\n          \"image_background\": \"https://EKrbUrDJpMjAodesiBw.lecjKE,1enmRoMFK4ekKjmP5LmSbY0W3EHFcAgxB9so0XjT0qS.uEIm3YThY-wBSmzT6UK.m\",\n          \"image\": \"https://XgOVoHLtAcpJULoj.bgentp+yS,9m6E5tj\",\n          \"year_start\": 5663,\n          \"year_end\": 25846\n        },\n        {\n          \"name\": \"string\",\n          \"id\": 5663,\n          \"slug\": \"hDVNe8rkLjy\",\n          \"games_count\": 5374,\n          \"image_background\": \"https://NoIamzIHBlVzrjqOSd.gbZ-gePACO0g9AnDZBA9q\",\n          \"image\": \"https://jchGpaqJVcayleEy.srulf2R6eHf1E\",\n          \"year_start\": 2880,\n          \"year_end\": 29431\n        }\n      ],\n      \"id\": 5477,\n      \"slug\": \"SkrXhfl\"\n    },\n    {\n      \"name\": \"string\",\n      \"platforms\": [\n        {\n          \"name\": \"string\",\n          \"id\": 4522,\n          \"slug\": \"jC\",\n          \"games_count\": 8784,\n          \"image_background\": \"https://IKvHjgvDkadqdjVBazLcYzwq.bzJouYtopSzbjPo3OokgUZ2VUHdWk7,cVpF\",\n          \"image\": \"https://AgffEKxKeZAWZFuKMLHlQNfeXAA.ugnY9G7POxB20oe7Wf.ks\",\n          \"year_start\": 20759,\n          \"year_end\": 21251\n        },\n        {\n          \"name\": \"string\",\n          \"id\": 3423,\n          \"slug\": \"2HZ6w6\",\n          \"games_count\": 8563,\n          \"image_background\": \"http://mZzpivh.mnZ-hNgRJx7wikeuWxlBuWgHj2+qYuQ1k\",\n          \"image\": \"https://D.rsobz-asz.4CBvFm29vSePP+H4gerP-xhzbbSvyRFElOBO7WyNF.4AfgIca4TBNIOWT\",\n          \"year_start\": 22526,\n          \"year_end\": 20126\n        }\n      ],\n      \"id\": 2655,\n      \"slug\": \"gfLmcS8\"\n    }\n  ],\n  \"next\": \"https://kFNHqRoZKWvtmEhnkgauYvBBJPFE.oyD\",\n  \"previous\": \"https://EgZkdVwjyT.acuq,KkOVbed1pf8lQ9KHrkZlzUnpX4+GzovhmPBCgpGdBn66D38llZHAu\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51ec8f3b-008d-4220-b6bc-02ffa962f5f2",
+          "name": "Get details of the platform.",
+          "request": {
+            "name": "Get details of the platform.",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "platforms",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) A unique integer value identifying this Platform."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a417bde9-49db-41e7-93dd-7e66f88672ac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "platforms",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) A unique integer value identifying this Platform."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": 5369,\n  \"slug\": \"BWEab\",\n  \"games_count\": 414,\n  \"image_background\": \"https://nFJpaibO.yszlY8FVVho52\",\n  \"description\": \"string\",\n  \"image\": \"http://JMuoKWKnAOzcrcyQxYaBewr.ksng2PgLZJyaMgYUBS\",\n  \"year_start\": 20036,\n  \"year_end\": 17135\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rawg.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5cc43cfd-a2b3-431e-8ffd-2226f271c13f",
+    "name": "RAWG Video Games Database creator-roles platforms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nThe largest open video games database.\n\n### Why build on RAWG\n- More than 350,000 games for 50 platforms including mobiles.\n- Rich metadata: tags, genres, developers, publishers, individual creators, official websites, release dates,\nMetacritic ratings.\n- Where to buy: links to digital distribution services\n- Similar games based on visual similarity.\n- Player activity data: Steam average playtime and RAWG player counts and ratings.\n- Actively developing and constantly getting better by user contribution and our algorithms.\n\n### Terms of Use\n- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active\nhyperlink from every page where the data of RAWG is used.\n- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000\npage views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for\ncommercial terms.\n- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy\nto say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,\nand we will talk it through.\n- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.\nIf you don’t provide it, we may ban your requests.\n\n__[Read more](https://rawg.io/apidocs)__.\n",
+      "type": "text/plain"
+    }
+  }
+}

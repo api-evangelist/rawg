@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RAWG Video Games Database creator-roles publishers API",
+    "version": "v1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "publishers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of video game publishers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/publishers",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "A page number within the paginated result set."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page."
+              }
+            ]
+          },
+          "docs": "Get a list of video game publishers."
+        },
+        {
+          "info": {
+            "name": "Get details of the publisher.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/publishers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "A unique integer value identifying this Publisher."
+              }
+            ]
+          },
+          "docs": "Get details of the publisher."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
