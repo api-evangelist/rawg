@@ -72,6 +72,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Creators
+  tags_raw:
   - creators
   properties:
   - type: OpenAPI
@@ -99,6 +101,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Developers
+  tags_raw:
   - developers
   properties:
   - type: OpenAPI
@@ -126,6 +130,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Games
+  tags_raw:
   - games
   properties:
   - type: OpenAPI
@@ -153,6 +159,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Genres
+  tags_raw:
   - genres
   properties:
   - type: OpenAPI
@@ -180,6 +188,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Platforms
+  tags_raw:
   - platforms
   properties:
   - type: OpenAPI
@@ -207,6 +217,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Publishers
+  tags_raw:
   - publishers
   properties:
   - type: OpenAPI
@@ -234,6 +246,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Stores
+  tags_raw:
   - stores
   properties:
   - type: OpenAPI
@@ -261,6 +275,8 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
+  - Tags
+  tags_raw:
   - tags
   properties:
   - type: OpenAPI
