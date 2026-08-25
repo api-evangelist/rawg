@@ -3,10 +3,13 @@
   "feeds": [
     {
       "source": "https://rawg.io/terms",
-      "error": "TimeoutError"
+      "feed_url": "https://rawg.io/terms",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-06T14:08:46Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "agent_pulled": "2026-07-04"
 }
