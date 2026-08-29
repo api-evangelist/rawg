@@ -1,0 +1,26 @@
+slug: rawg
+provider: RAWG
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: games
+  spec_file: rawg-games-api-openapi.yml
+  capability_id: BC-3710.20
+  capability_id_l1: BC-3710
+  capability_name: Metadata Cataloguing
+  confidence: 0.7
+  evidence: GET /games/{id} "Get details of the game."; GET /games/{id}/movies "Get a list of game trailers.";
+    GET /games/{game_pk}/screenshots "Get screenshots for the game."
+  reason: 'Core entity of an entertainment-content metadata database: title records with descriptive metadata,
+    screenshots, trailers, ratings and related-title lineage. This realises descriptive metadata cataloguing
+    that makes content discoverable; it is not production, distribution or rights management.'

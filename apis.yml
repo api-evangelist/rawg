@@ -311,6 +311,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/rawg-capability-edges.yml
+    name: RAWG Business Capability Map
   - type: AgenticAccess
     url: agentic-access/rawg-agentic-access.yml
   - type: DomainSecurity
