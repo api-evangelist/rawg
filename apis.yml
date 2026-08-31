@@ -84,7 +84,7 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
-  - Creators
+  - creators
   tags_raw:
   - creators
   properties:
@@ -142,7 +142,7 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
-  - Games
+  - games
   tags_raw:
   - games
   properties:
@@ -171,7 +171,7 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
-  - Genres
+  - genres
   tags_raw:
   - genres
   properties:
@@ -229,7 +229,7 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
-  - Publishers
+  - publishers
   tags_raw:
   - publishers
   properties:
