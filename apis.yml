@@ -201,7 +201,7 @@ apis:
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
   tags:
-  - Platforms
+  - Platform
   tags_raw:
   - platforms
   properties:
