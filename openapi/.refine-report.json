@@ -1,15 +1,7 @@
 {
   "provider": "rawg",
   "sources": [
-    "rawg-creator-roles-api-openapi.yml",
-    "rawg-creators-api-openapi.yml",
-    "rawg-developers-api-openapi.yml",
-    "rawg-games-api-openapi.yml",
-    "rawg-genres-api-openapi.yml",
-    "rawg-platforms-api-openapi.yml",
-    "rawg-publishers-api-openapi.yml",
-    "rawg-stores-api-openapi.yml",
-    "rawg-tags-api-openapi.yml"
+    "_original/rawg-openapi.json"
   ],
   "outputs": [
     "rawg-creator-roles-api-openapi.yml",
@@ -25,6 +17,31 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "rawg-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "rawg-openapi.json: declared missing tag: creator-roles",
+    "rawg-openapi.json: declared missing tag: creators",
+    "rawg-openapi.json: declared missing tag: developers",
+    "rawg-openapi.json: declared missing tag: games",
+    "rawg-openapi.json: declared missing tag: genres",
+    "rawg-openapi.json: declared missing tag: platforms",
+    "rawg-openapi.json: declared missing tag: publishers",
+    "rawg-openapi.json: declared missing tag: stores",
+    "rawg-openapi.json: declared missing tag: tags",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "_original/rawg-openapi.yml: archived document superseded by a larger archived document",
+    "rawg-creator-roles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-creators-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-developers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-games-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-genres-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-platforms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-publishers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-stores-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rawg-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
