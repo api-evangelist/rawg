@@ -193,32 +193,6 @@ components:
           - 'null'
           maximum: 32767
           minimum: 0
-    PlatformParentSingle:
-      required:
-      - name
-      - platforms
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          maxLength: 100
-          minLength: 1
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        platforms:
-          type: array
-          items:
-            $ref: '#/components/schemas/Platform'
     Platform:
       required:
       - name
@@ -270,3 +244,29 @@ components:
           - 'null'
           maximum: 32767
           minimum: 0
+    PlatformParentSingle:
+      required:
+      - name
+      - platforms
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          maxLength: 100
+          minLength: 1
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
+          readOnly: true
+          minLength: 1
+        platforms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Platform'

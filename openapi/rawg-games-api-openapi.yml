@@ -724,7 +724,7 @@ components:
       example:
         image: '@image.jpg'
         hidden: false
-    Reddit:
+    Movie:
       type: object
       properties:
         id:
@@ -736,85 +736,15 @@ components:
           type: string
           readOnly: true
           minLength: 1
-        text:
-          title: Text
+        preview:
+          title: Preview
           type: string
           readOnly: true
-          minLength: 1
-        image:
-          title: Image
-          type: string
           format: uri
+        data:
+          title: Data
+          type: object
           readOnly: true
-          minLength: 1
-        url:
-          title: Url
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        username:
-          title: Username
-          type: string
-          readOnly: true
-          minLength: 1
-        username_url:
-          title: Username url
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-    Twitch:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        external_id:
-          title: External id
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        description:
-          title: Description
-          type: string
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-        published:
-          title: Published
-          type: string
-          format: date-time
-          readOnly: true
-        thumbnail:
-          title: Thumbnail
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        view_count:
-          title: View count
-          type: integer
-          readOnly: true
-        language:
-          title: Language
-          type: string
-          readOnly: true
-          minLength: 1
     GameSingle:
       required:
       - rating
@@ -1056,6 +986,52 @@ components:
                     type: string
                   recommended:
                     type: string
+    Twitch:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        external_id:
+          title: External id
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        description:
+          title: Description
+          type: string
+          readOnly: true
+          minLength: 1
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
+        published:
+          title: Published
+          type: string
+          format: date-time
+          readOnly: true
+        thumbnail:
+          title: Thumbnail
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        view_count:
+          title: View count
+          type: integer
+          readOnly: true
+        language:
+          title: Language
+          type: string
+          readOnly: true
+          minLength: 1
     ParentAchievement:
       type: object
       properties:
@@ -1083,6 +1059,29 @@ components:
           type: string
           format: decimal
           readOnly: true
+    GameStoreFull:
+      required:
+      - url
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        game_id:
+          title: Game id
+          type: string
+          readOnly: true
+        store_id:
+          title: Store id
+          type: string
+          readOnly: true
+        url:
+          title: Url
+          type: string
+          format: uri
+          maxLength: 500
+          minLength: 1
     Game:
       required:
       - rating
@@ -1215,6 +1214,86 @@ components:
                     type: string
                   recommended:
                     type: string
+    GamePersonList:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          minLength: 1
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          readOnly: true
+          format: uri
+        image_background:
+          title: Image background
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        games_count:
+          title: Games count
+          type: integer
+          readOnly: true
+    Reddit:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        text:
+          title: Text
+          type: string
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        url:
+          title: Url
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        username:
+          title: Username
+          type: string
+          readOnly: true
+          minLength: 1
+        username_url:
+          title: Username url
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
     Youtube:
       type: object
       properties:
@@ -1276,29 +1355,6 @@ components:
           title: Thumbnails
           type: object
           readOnly: true
-    GameStoreFull:
-      required:
-      - url
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        game_id:
-          title: Game id
-          type: string
-          readOnly: true
-        store_id:
-          title: Store id
-          type: string
-          readOnly: true
-        url:
-          title: Url
-          type: string
-          format: uri
-          maxLength: 500
-          minLength: 1
     GamePlatformMetacritic:
       type: object
       properties:
@@ -1311,59 +1367,3 @@ components:
           type: string
           readOnly: true
           minLength: 1
-    GamePersonList:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          minLength: 1
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        image:
-          title: Image
-          type: string
-          readOnly: true
-          format: uri
-        image_background:
-          title: Image background
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        games_count:
-          title: Games count
-          type: integer
-          readOnly: true
-    Movie:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        preview:
-          title: Preview
-          type: string
-          readOnly: true
-          format: uri
-        data:
-          title: Data
-          type: object
-          readOnly: true

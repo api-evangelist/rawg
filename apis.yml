@@ -53,7 +53,7 @@ modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
 - aid: rawg:rawg-creator-roles-api
-  name: RAWG creator-roles API
+  name: RAWG Creator Roles API
   description: The creator-roles API from RAWG — 1 operation(s) for creator-roles.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -80,7 +80,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-creators-api
-  name: RAWG creators API
+  name: RAWG Creators API
   description: The creators API from RAWG — 2 operation(s) for creators.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -109,7 +109,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-developers-api
-  name: RAWG developers API
+  name: RAWG Developers API
   description: The developers API from RAWG — 2 operation(s) for developers.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -138,7 +138,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-games-api
-  name: RAWG games API
+  name: RAWG Games API
   description: The games API from RAWG — 14 operation(s) for games.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -167,7 +167,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-genres-api
-  name: RAWG genres API
+  name: RAWG Genres API
   description: The genres API from RAWG — 2 operation(s) for genres.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -196,7 +196,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-platforms-api
-  name: RAWG platforms API
+  name: RAWG Platforms API
   description: The platforms API from RAWG — 3 operation(s) for platforms.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -225,7 +225,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-publishers-api
-  name: RAWG publishers API
+  name: RAWG Publishers API
   description: The publishers API from RAWG — 2 operation(s) for publishers.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -254,7 +254,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-stores-api
-  name: RAWG stores API
+  name: RAWG Stores API
   description: The stores API from RAWG — 2 operation(s) for stores.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
@@ -283,7 +283,7 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 - aid: rawg:rawg-tags-api
-  name: RAWG tags API
+  name: RAWG Tags API
   description: The tags API from RAWG — 2 operation(s) for tags.
   humanURL: https://rawg.io/apidocs
   baseURL: https://api.rawg.io/api
