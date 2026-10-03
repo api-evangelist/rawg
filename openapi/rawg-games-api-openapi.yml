@@ -745,6 +745,78 @@ components:
           title: Data
           type: object
           readOnly: true
+    Reddit:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        text:
+          title: Text
+          type: string
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        url:
+          title: Url
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        username:
+          title: Username
+          type: string
+          readOnly: true
+          minLength: 1
+        username_url:
+          title: Username url
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
+    ParentAchievement:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        description:
+          title: Description
+          type: string
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          readOnly: true
+          format: uri
+        percent:
+          title: Percent
+          type: string
+          format: decimal
+          readOnly: true
     GameSingle:
       required:
       - rating
@@ -986,6 +1058,64 @@ components:
                     type: string
                   recommended:
                     type: string
+    GamePersonList:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          minLength: 1
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          readOnly: true
+          format: uri
+        image_background:
+          title: Image background
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        games_count:
+          title: Games count
+          type: integer
+          readOnly: true
+    GameStoreFull:
+      required:
+      - url
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        game_id:
+          title: Game id
+          type: string
+          readOnly: true
+        store_id:
+          title: Store id
+          type: string
+          readOnly: true
+        url:
+          title: Url
+          type: string
+          format: uri
+          maxLength: 500
+          minLength: 1
     Twitch:
       type: object
       properties:
@@ -1032,13 +1162,28 @@ components:
           type: string
           readOnly: true
           minLength: 1
-    ParentAchievement:
+    Youtube:
       type: object
       properties:
         id:
           title: ID
           type: integer
           readOnly: true
+        external_id:
+          title: External id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_id:
+          title: Channel id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_title:
+          title: Channel title
+          type: string
+          readOnly: true
+          minLength: 1
         name:
           title: Name
           type: string
@@ -1049,39 +1194,35 @@ components:
           type: string
           readOnly: true
           minLength: 1
-        image:
-          title: Image
+        created:
+          title: Created
           type: string
+          format: date-time
           readOnly: true
-          format: uri
-        percent:
-          title: Percent
-          type: string
-          format: decimal
-          readOnly: true
-    GameStoreFull:
-      required:
-      - url
-      type: object
-      properties:
-        id:
-          title: ID
+        view_count:
+          title: View count
           type: integer
           readOnly: true
-        game_id:
-          title: Game id
-          type: string
+        comments_count:
+          title: Comments count
+          type: integer
           readOnly: true
-        store_id:
-          title: Store id
-          type: string
+        like_count:
+          title: Like count
+          type: integer
           readOnly: true
-        url:
-          title: Url
-          type: string
-          format: uri
-          maxLength: 500
-          minLength: 1
+        dislike_count:
+          title: Dislike count
+          type: integer
+          readOnly: true
+        favorite_count:
+          title: Favorite count
+          type: integer
+          readOnly: true
+        thumbnails:
+          title: Thumbnails
+          type: object
+          readOnly: true
     Game:
       required:
       - rating
@@ -1214,147 +1355,6 @@ components:
                     type: string
                   recommended:
                     type: string
-    GamePersonList:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          minLength: 1
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        image:
-          title: Image
-          type: string
-          readOnly: true
-          format: uri
-        image_background:
-          title: Image background
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        games_count:
-          title: Games count
-          type: integer
-          readOnly: true
-    Reddit:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        text:
-          title: Text
-          type: string
-          readOnly: true
-          minLength: 1
-        image:
-          title: Image
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        url:
-          title: Url
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        username:
-          title: Username
-          type: string
-          readOnly: true
-          minLength: 1
-        username_url:
-          title: Username url
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-    Youtube:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        external_id:
-          title: External id
-          type: string
-          readOnly: true
-          minLength: 1
-        channel_id:
-          title: Channel id
-          type: string
-          readOnly: true
-          minLength: 1
-        channel_title:
-          title: Channel title
-          type: string
-          readOnly: true
-          minLength: 1
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        description:
-          title: Description
-          type: string
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-        view_count:
-          title: View count
-          type: integer
-          readOnly: true
-        comments_count:
-          title: Comments count
-          type: integer
-          readOnly: true
-        like_count:
-          title: Like count
-          type: integer
-          readOnly: true
-        dislike_count:
-          title: Dislike count
-          type: integer
-          readOnly: true
-        favorite_count:
-          title: Favorite count
-          type: integer
-          readOnly: true
-        thumbnails:
-          title: Thumbnails
-          type: object
-          readOnly: true
     GamePlatformMetacritic:
       type: object
       properties:
