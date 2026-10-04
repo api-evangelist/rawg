@@ -139,7 +139,7 @@ paths:
       - Platforms
 components:
   schemas:
-    PlatformSingle:
+    Platform:
       required:
       - name
       type: object
@@ -169,9 +169,6 @@ components:
           type: string
           readOnly: true
           format: uri
-        description:
-          title: Description
-          type: string
         image:
           title: Image
           type:
@@ -219,7 +216,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Platform'
-    Platform:
+    PlatformSingle:
       required:
       - name
       type: object
@@ -249,6 +246,9 @@ components:
           type: string
           readOnly: true
           format: uri
+        description:
+          title: Description
+          type: string
         image:
           title: Image
           type:

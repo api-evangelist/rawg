@@ -695,36 +695,32 @@ paths:
       - Games
 components:
   schemas:
-    ScreenShot:
+    GameStoreFull:
+      required:
+      - url
       type: object
       properties:
         id:
           title: ID
           type: integer
           readOnly: true
-        image:
-          title: Image
-          description: An image file with size up to 20 MB.
+        game_id:
+          title: Game id
           type: string
           readOnly: true
+        store_id:
+          title: Store id
+          type: string
+          readOnly: true
+        url:
+          title: Url
+          type: string
           format: uri
-        hidden:
-          title: Hidden
-          description: Set image as hidden or visible.
-          type: boolean
-          default: false
-        width:
-          title: Width
-          type: integer
-          readOnly: true
-        height:
-          title: Height
-          type: integer
-          readOnly: true
-      example:
-        image: '@image.jpg'
-        hidden: false
-    Movie:
+          maxLength: 500
+          minLength: 1
+    GamePersonList:
+      required:
+      - name
       type: object
       properties:
         id:
@@ -734,16 +730,28 @@ components:
         name:
           title: Name
           type: string
+          minLength: 1
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
           readOnly: true
           minLength: 1
-        preview:
-          title: Preview
+        image:
+          title: Image
           type: string
           readOnly: true
           format: uri
-        data:
-          title: Data
-          type: object
+        image_background:
+          title: Image background
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        games_count:
+          title: Games count
+          type: integer
           readOnly: true
     Reddit:
       type: object
@@ -790,11 +798,15 @@ components:
           type: string
           format: date-time
           readOnly: true
-    ParentAchievement:
+    Twitch:
       type: object
       properties:
         id:
           title: ID
+          type: integer
+          readOnly: true
+        external_id:
+          title: External id
           type: integer
           readOnly: true
         name:
@@ -807,15 +819,285 @@ components:
           type: string
           readOnly: true
           minLength: 1
-        image:
-          title: Image
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
+        published:
+          title: Published
+          type: string
+          format: date-time
+          readOnly: true
+        thumbnail:
+          title: Thumbnail
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
+        view_count:
+          title: View count
+          type: integer
+          readOnly: true
+        language:
+          title: Language
+          type: string
+          readOnly: true
+          minLength: 1
+    Movie:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        preview:
+          title: Preview
           type: string
           readOnly: true
           format: uri
-        percent:
-          title: Percent
+        data:
+          title: Data
+          type: object
+          readOnly: true
+    ScreenShot:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        image:
+          title: Image
+          description: An image file with size up to 20 MB.
           type: string
-          format: decimal
+          readOnly: true
+          format: uri
+        hidden:
+          title: Hidden
+          description: Set image as hidden or visible.
+          type: boolean
+          default: false
+        width:
+          title: Width
+          type: integer
+          readOnly: true
+        height:
+          title: Height
+          type: integer
+          readOnly: true
+      example:
+        image: '@image.jpg'
+        hidden: false
+    Game:
+      required:
+      - rating
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
+          readOnly: true
+          minLength: 1
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        released:
+          title: Released
+          type: string
+          format: date
+          readOnly: true
+        tba:
+          title: TBA
+          type: boolean
+          readOnly: true
+        background_image:
+          title: Background image
+          type: string
+          readOnly: true
+          format: uri
+        rating:
+          title: Rating
+          type: number
+        rating_top:
+          title: Rating top
+          type: integer
+          readOnly: true
+        ratings:
+          title: Ratings
+          type: object
+          readOnly: true
+        ratings_count:
+          title: Ratings count
+          type: integer
+          readOnly: true
+        reviews_text_count:
+          title: Reviews text count
+          type: string
+          readOnly: true
+        added:
+          title: Added
+          type: integer
+          readOnly: true
+        added_by_status:
+          title: Added by status
+          type: object
+          readOnly: true
+        metacritic:
+          title: Metacritic
+          type: integer
+          readOnly: true
+        playtime:
+          title: Playtime
+          description: in hours
+          type: integer
+          readOnly: true
+        suggestions_count:
+          title: Suggestions count
+          type: integer
+          readOnly: true
+        updated:
+          title: Updated
+          type: string
+          format: date-time
+          readOnly: true
+        esrb_rating:
+          type:
+          - object
+          - 'null'
+          properties:
+            id:
+              type: integer
+            slug:
+              type: string
+              enum:
+              - everyone
+              - everyone-10-plus
+              - teen
+              - mature
+              - adults-only
+              - rating-pending
+            name:
+              type: string
+              enum:
+              - Everyone
+              - Everyone 10+
+              - Teen
+              - Mature
+              - Adults Only
+              - Rating Pending
+        platforms:
+          type: array
+          items:
+            type: object
+            properties:
+              platform:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  slug:
+                    type: string
+                  name:
+                    type: string
+              released_at:
+                type:
+                - string
+                - 'null'
+              requirements:
+                type:
+                - object
+                - 'null'
+                properties:
+                  minimum:
+                    type: string
+                  recommended:
+                    type: string
+    GamePlatformMetacritic:
+      type: object
+      properties:
+        metascore:
+          title: Metascore
+          type: integer
+          readOnly: true
+        url:
+          title: Url
+          type: string
+          readOnly: true
+          minLength: 1
+    Youtube:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        external_id:
+          title: External id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_id:
+          title: Channel id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_title:
+          title: Channel title
+          type: string
+          readOnly: true
+          minLength: 1
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        description:
+          title: Description
+          type: string
+          readOnly: true
+          minLength: 1
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
+        view_count:
+          title: View count
+          type: integer
+          readOnly: true
+        comments_count:
+          title: Comments count
+          type: integer
+          readOnly: true
+        like_count:
+          title: Like count
+          type: integer
+          readOnly: true
+        dislike_count:
+          title: Dislike count
+          type: integer
+          readOnly: true
+        favorite_count:
+          title: Favorite count
+          type: integer
+          readOnly: true
+        thumbnails:
+          title: Thumbnails
+          type: object
           readOnly: true
     GameSingle:
       required:
@@ -1058,9 +1340,7 @@ components:
                     type: string
                   recommended:
                     type: string
-    GamePersonList:
-      required:
-      - name
+    ParentAchievement:
       type: object
       properties:
         id:
@@ -1070,12 +1350,11 @@ components:
         name:
           title: Name
           type: string
+          readOnly: true
           minLength: 1
-        slug:
-          title: Slug
+        description:
+          title: Description
           type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
           readOnly: true
           minLength: 1
         image:
@@ -1083,287 +1362,8 @@ components:
           type: string
           readOnly: true
           format: uri
-        image_background:
-          title: Image background
+        percent:
+          title: Percent
           type: string
-          format: uri
+          format: decimal
           readOnly: true
-          minLength: 1
-        games_count:
-          title: Games count
-          type: integer
-          readOnly: true
-    GameStoreFull:
-      required:
-      - url
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        game_id:
-          title: Game id
-          type: string
-          readOnly: true
-        store_id:
-          title: Store id
-          type: string
-          readOnly: true
-        url:
-          title: Url
-          type: string
-          format: uri
-          maxLength: 500
-          minLength: 1
-    Twitch:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        external_id:
-          title: External id
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        description:
-          title: Description
-          type: string
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-        published:
-          title: Published
-          type: string
-          format: date-time
-          readOnly: true
-        thumbnail:
-          title: Thumbnail
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        view_count:
-          title: View count
-          type: integer
-          readOnly: true
-        language:
-          title: Language
-          type: string
-          readOnly: true
-          minLength: 1
-    Youtube:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        external_id:
-          title: External id
-          type: string
-          readOnly: true
-          minLength: 1
-        channel_id:
-          title: Channel id
-          type: string
-          readOnly: true
-          minLength: 1
-        channel_title:
-          title: Channel title
-          type: string
-          readOnly: true
-          minLength: 1
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        description:
-          title: Description
-          type: string
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-        view_count:
-          title: View count
-          type: integer
-          readOnly: true
-        comments_count:
-          title: Comments count
-          type: integer
-          readOnly: true
-        like_count:
-          title: Like count
-          type: integer
-          readOnly: true
-        dislike_count:
-          title: Dislike count
-          type: integer
-          readOnly: true
-        favorite_count:
-          title: Favorite count
-          type: integer
-          readOnly: true
-        thumbnails:
-          title: Thumbnails
-          type: object
-          readOnly: true
-    Game:
-      required:
-      - rating
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        released:
-          title: Released
-          type: string
-          format: date
-          readOnly: true
-        tba:
-          title: TBA
-          type: boolean
-          readOnly: true
-        background_image:
-          title: Background image
-          type: string
-          readOnly: true
-          format: uri
-        rating:
-          title: Rating
-          type: number
-        rating_top:
-          title: Rating top
-          type: integer
-          readOnly: true
-        ratings:
-          title: Ratings
-          type: object
-          readOnly: true
-        ratings_count:
-          title: Ratings count
-          type: integer
-          readOnly: true
-        reviews_text_count:
-          title: Reviews text count
-          type: string
-          readOnly: true
-        added:
-          title: Added
-          type: integer
-          readOnly: true
-        added_by_status:
-          title: Added by status
-          type: object
-          readOnly: true
-        metacritic:
-          title: Metacritic
-          type: integer
-          readOnly: true
-        playtime:
-          title: Playtime
-          description: in hours
-          type: integer
-          readOnly: true
-        suggestions_count:
-          title: Suggestions count
-          type: integer
-          readOnly: true
-        updated:
-          title: Updated
-          type: string
-          format: date-time
-          readOnly: true
-        esrb_rating:
-          type:
-          - object
-          - 'null'
-          properties:
-            id:
-              type: integer
-            slug:
-              type: string
-              enum:
-              - everyone
-              - everyone-10-plus
-              - teen
-              - mature
-              - adults-only
-              - rating-pending
-            name:
-              type: string
-              enum:
-              - Everyone
-              - Everyone 10+
-              - Teen
-              - Mature
-              - Adults Only
-              - Rating Pending
-        platforms:
-          type: array
-          items:
-            type: object
-            properties:
-              platform:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  slug:
-                    type: string
-                  name:
-                    type: string
-              released_at:
-                type:
-                - string
-                - 'null'
-              requirements:
-                type:
-                - object
-                - 'null'
-                properties:
-                  minimum:
-                    type: string
-                  recommended:
-                    type: string
-    GamePlatformMetacritic:
-      type: object
-      properties:
-        metascore:
-          title: Metascore
-          type: integer
-          readOnly: true
-        url:
-          title: Url
-          type: string
-          readOnly: true
-          minLength: 1
