@@ -1,0 +1,12 @@
+{
+ "url": "https://api.rawg.io/docs/?format=openapi",
+ "requested_url": "https://api.rawg.io/docs/?format=openapi",
+ "status": 200,
+ "content_type": "application/openapi+json; charset=utf-8",
+ "bytes": 48079,
+ "sha256": "a2efd7688148ce44514d42bef36a05fe58b4c05a3ab916930ba8b39fc83b427e",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
