@@ -312,6 +312,12 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/rawg/refs/heads/main/vocabulary/rawg-vocabulary.yml
 common:
+  - type: Plans
+    url: plans/rawg-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/rawg-rate-limits.yml
+  - type: FinOps
+    url: finops/rawg-finops.yml
   - type: CapabilityMap
     url: capabilities/rawg-capability-edges.yml
     name: RAWG Business Capability Map
