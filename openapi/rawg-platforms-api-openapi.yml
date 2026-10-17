@@ -139,57 +139,6 @@ paths:
       - Platforms
 components:
   schemas:
-    Platform:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          maxLength: 100
-          minLength: 1
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        games_count:
-          title: Games count
-          type: integer
-          readOnly: true
-        image_background:
-          title: Image background
-          type: string
-          readOnly: true
-          format: uri
-        image:
-          title: Image
-          type:
-          - string
-          - 'null'
-          readOnly: true
-          format: uri
-        year_start:
-          title: Year start
-          type:
-          - integer
-          - 'null'
-          maximum: 32767
-          minimum: 0
-        year_end:
-          title: Year end
-          type:
-          - integer
-          - 'null'
-          maximum: 32767
-          minimum: 0
     PlatformParentSingle:
       required:
       - name
@@ -249,6 +198,57 @@ components:
         description:
           title: Description
           type: string
+        image:
+          title: Image
+          type:
+          - string
+          - 'null'
+          readOnly: true
+          format: uri
+        year_start:
+          title: Year start
+          type:
+          - integer
+          - 'null'
+          maximum: 32767
+          minimum: 0
+        year_end:
+          title: Year end
+          type:
+          - integer
+          - 'null'
+          maximum: 32767
+          minimum: 0
+    Platform:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          maxLength: 100
+          minLength: 1
+        slug:
+          title: Slug
+          type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
+          readOnly: true
+          minLength: 1
+        games_count:
+          title: Games count
+          type: integer
+          readOnly: true
+        image_background:
+          title: Image background
+          type: string
+          readOnly: true
+          format: uri
         image:
           title: Image
           type:

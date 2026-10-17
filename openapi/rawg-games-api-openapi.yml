@@ -695,6 +695,94 @@ paths:
       - Games
 components:
   schemas:
+    Youtube:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        external_id:
+          title: External id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_id:
+          title: Channel id
+          type: string
+          readOnly: true
+          minLength: 1
+        channel_title:
+          title: Channel title
+          type: string
+          readOnly: true
+          minLength: 1
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        description:
+          title: Description
+          type: string
+          readOnly: true
+          minLength: 1
+        created:
+          title: Created
+          type: string
+          format: date-time
+          readOnly: true
+        view_count:
+          title: View count
+          type: integer
+          readOnly: true
+        comments_count:
+          title: Comments count
+          type: integer
+          readOnly: true
+        like_count:
+          title: Like count
+          type: integer
+          readOnly: true
+        dislike_count:
+          title: Dislike count
+          type: integer
+          readOnly: true
+        favorite_count:
+          title: Favorite count
+          type: integer
+          readOnly: true
+        thumbnails:
+          title: Thumbnails
+          type: object
+          readOnly: true
+    ParentAchievement:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        description:
+          title: Description
+          type: string
+          readOnly: true
+          minLength: 1
+        image:
+          title: Image
+          type: string
+          readOnly: true
+          format: uri
+        percent:
+          title: Percent
+          type: string
+          format: decimal
+          readOnly: true
     GameStoreFull:
       required:
       - url
@@ -718,41 +806,6 @@ components:
           format: uri
           maxLength: 500
           minLength: 1
-    GamePersonList:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          minLength: 1
-        slug:
-          title: Slug
-          type: string
-          format: slug
-          pattern: ^[-a-zA-Z0-9_]+$
-          readOnly: true
-          minLength: 1
-        image:
-          title: Image
-          type: string
-          readOnly: true
-          format: uri
-        image_background:
-          title: Image background
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        games_count:
-          title: Games count
-          type: integer
-          readOnly: true
     Reddit:
       type: object
       properties:
@@ -798,102 +851,6 @@ components:
           type: string
           format: date-time
           readOnly: true
-    Twitch:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        external_id:
-          title: External id
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        description:
-          title: Description
-          type: string
-          readOnly: true
-          minLength: 1
-        created:
-          title: Created
-          type: string
-          format: date-time
-          readOnly: true
-        published:
-          title: Published
-          type: string
-          format: date-time
-          readOnly: true
-        thumbnail:
-          title: Thumbnail
-          type: string
-          format: uri
-          readOnly: true
-          minLength: 1
-        view_count:
-          title: View count
-          type: integer
-          readOnly: true
-        language:
-          title: Language
-          type: string
-          readOnly: true
-          minLength: 1
-    Movie:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        name:
-          title: Name
-          type: string
-          readOnly: true
-          minLength: 1
-        preview:
-          title: Preview
-          type: string
-          readOnly: true
-          format: uri
-        data:
-          title: Data
-          type: object
-          readOnly: true
-    ScreenShot:
-      type: object
-      properties:
-        id:
-          title: ID
-          type: integer
-          readOnly: true
-        image:
-          title: Image
-          description: An image file with size up to 20 MB.
-          type: string
-          readOnly: true
-          format: uri
-        hidden:
-          title: Hidden
-          description: Set image as hidden or visible.
-          type: boolean
-          default: false
-        width:
-          title: Width
-          type: integer
-          readOnly: true
-        height:
-          title: Height
-          type: integer
-          readOnly: true
-      example:
-        image: '@image.jpg'
-        hidden: false
     Game:
       required:
       - rating
@@ -1026,19 +983,7 @@ components:
                     type: string
                   recommended:
                     type: string
-    GamePlatformMetacritic:
-      type: object
-      properties:
-        metascore:
-          title: Metascore
-          type: integer
-          readOnly: true
-        url:
-          title: Url
-          type: string
-          readOnly: true
-          minLength: 1
-    Youtube:
+    Twitch:
       type: object
       properties:
         id:
@@ -1047,19 +992,8 @@ components:
           readOnly: true
         external_id:
           title: External id
-          type: string
+          type: integer
           readOnly: true
-          minLength: 1
-        channel_id:
-          title: Channel id
-          type: string
-          readOnly: true
-          minLength: 1
-        channel_title:
-          title: Channel title
-          type: string
-          readOnly: true
-          minLength: 1
         name:
           title: Name
           type: string
@@ -1075,28 +1009,86 @@ components:
           type: string
           format: date-time
           readOnly: true
+        published:
+          title: Published
+          type: string
+          format: date-time
+          readOnly: true
+        thumbnail:
+          title: Thumbnail
+          type: string
+          format: uri
+          readOnly: true
+          minLength: 1
         view_count:
           title: View count
           type: integer
           readOnly: true
-        comments_count:
-          title: Comments count
+        language:
+          title: Language
+          type: string
+          readOnly: true
+          minLength: 1
+    GamePlatformMetacritic:
+      type: object
+      properties:
+        metascore:
+          title: Metascore
           type: integer
           readOnly: true
-        like_count:
-          title: Like count
+        url:
+          title: Url
+          type: string
+          readOnly: true
+          minLength: 1
+    ScreenShot:
+      type: object
+      properties:
+        id:
+          title: ID
           type: integer
           readOnly: true
-        dislike_count:
-          title: Dislike count
+        image:
+          title: Image
+          description: An image file with size up to 20 MB.
+          type: string
+          readOnly: true
+          format: uri
+        hidden:
+          title: Hidden
+          description: Set image as hidden or visible.
+          type: boolean
+          default: false
+        width:
+          title: Width
           type: integer
           readOnly: true
-        favorite_count:
-          title: Favorite count
+        height:
+          title: Height
           type: integer
           readOnly: true
-        thumbnails:
-          title: Thumbnails
+      example:
+        image: '@image.jpg'
+        hidden: false
+    Movie:
+      type: object
+      properties:
+        id:
+          title: ID
+          type: integer
+          readOnly: true
+        name:
+          title: Name
+          type: string
+          readOnly: true
+          minLength: 1
+        preview:
+          title: Preview
+          type: string
+          readOnly: true
+          format: uri
+        data:
+          title: Data
           type: object
           readOnly: true
     GameSingle:
@@ -1340,7 +1332,9 @@ components:
                     type: string
                   recommended:
                     type: string
-    ParentAchievement:
+    GamePersonList:
+      required:
+      - name
       type: object
       properties:
         id:
@@ -1350,11 +1344,12 @@ components:
         name:
           title: Name
           type: string
-          readOnly: true
           minLength: 1
-        description:
-          title: Description
+        slug:
+          title: Slug
           type: string
+          format: slug
+          pattern: ^[-a-zA-Z0-9_]+$
           readOnly: true
           minLength: 1
         image:
@@ -1362,8 +1357,13 @@ components:
           type: string
           readOnly: true
           format: uri
-        percent:
-          title: Percent
+        image_background:
+          title: Image background
           type: string
-          format: decimal
+          format: uri
+          readOnly: true
+          minLength: 1
+        games_count:
+          title: Games count
+          type: integer
           readOnly: true
