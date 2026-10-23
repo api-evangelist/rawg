@@ -270,3 +270,9 @@ components:
           - 'null'
           maximum: 32767
           minimum: 0
+x-provenance:
+  method: harvested
+  publisher: RAWG
+  source: https://api.rawg.io/docs/?format=openapi
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)

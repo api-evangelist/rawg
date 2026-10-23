@@ -150,3 +150,9 @@ components:
           format: uri
           readOnly: true
           minLength: 1
+x-provenance:
+  method: harvested
+  publisher: RAWG
+  source: https://api.rawg.io/docs/?format=openapi
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
